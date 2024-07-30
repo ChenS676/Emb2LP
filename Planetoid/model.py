@@ -18,6 +18,7 @@ from torch_geometric.utils import add_remaining_self_loops
 from torch_scatter import scatter_add
 from torch_sparse import matmul
 from torch_geometric.nn.conv.gcn_conv import gcn_norm
+from Planetoid.utils import symmetrical_matrix, row_stochastic_matrix, col_stochastic_matrix
 
 
     
@@ -48,6 +49,8 @@ class HLGNN(MessagePassing):
             TEMP = TEMP / np.sum(np.abs(TEMP))
 
         self.temp = Parameter(torch.tensor(TEMP))
+        # alpha for Propаgation Operator
+        self.a = Parameter(torch.tensor(3 * [self.alpha], dtype=torch.float32))
         # self.beta = Parameter(torch.zeros(3))
         
     def reset_parameters(self):
@@ -73,7 +76,13 @@ class HLGNN(MessagePassing):
     def forward(self, x, adj_t, edge_weight):
         x = F.dropout(x, p=self.dropout, training=self.training)
         x = self.lin1(x)
-        adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
+        # adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
+        if self.init == 'RWR':
+            adj_t = row_stochastic_matrix(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
+        elif self.init == 'KI':
+            adj_t = adj_t
+        else: # I don't know about remain cases
+            adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
         # edge_index, row_n = row_norm(raw_edge_index, edge_weight, num_nodes, dtype=torch.float)
         # edge_index, column_n = column_norm(raw_edge_index, edge_weight, num_nodes, dtype=torch.float)
         
