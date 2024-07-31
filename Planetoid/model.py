@@ -18,8 +18,8 @@ from torch_geometric.utils import add_remaining_self_loops
 from torch_scatter import scatter_add
 from torch_sparse import matmul
 from torch_geometric.nn.conv.gcn_conv import gcn_norm
-from Planetoid.utils import symmetrical_matrix, row_stochastic_matrix, col_stochastic_matrix
-
+# from Planetoid.utils import symmetrical_matrix, row_stochastic_matrix, col_stochastic_matrix
+from utils import symmetrical_matrix, row_stochastic_matrix, col_stochastic_matrix
 
     
 class HLGNN(MessagePassing):

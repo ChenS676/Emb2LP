@@ -61,7 +61,8 @@ def row_stochastic_matrix(
     deg = torch_sparse.sum(adj_t, dim=1)
     deg_inv = deg.pow_(-1)
     deg_inv.masked_fill_(deg_inv == float('inf'), 0.)
-    adj_t = torch_sparse.mul(deg_inv.view(-1, 1), adj_t)
+    # adj_t = torch_sparse.mul(deg_inv.view(-1, 1), adj_t) doesn't work!
+    adj_t = torch_sparse.mul(adj_t, deg_inv.view(-1, 1))
 
     return adj_t
 
