@@ -32,12 +32,13 @@ class BaseGNN(torch.nn.Module):
         return x
     
 class HLGNN(MessagePassing):
-    def __init__(self, in_channels, hidden_channels, out_channels, K, dropout, alpha, init):
+    def __init__(self, in_channels, hidden_channels, out_channels, K, dropout, alpha, init, args):
         super(HLGNN, self).__init__(aggr='add')
         self.K = K
         self.init = init
         self.alpha = alpha
         self.dropout = dropout
+        self.norm_func = globals()[args.norm_func]
         self.lin1 = Linear(in_channels, hidden_channels)
 
         assert init in ['SGC', 'RWR', 'KI', 'Random']
@@ -83,7 +84,8 @@ class HLGNN(MessagePassing):
     def forward(self, x, adj_t, edge_weight):
         x = F.dropout(x, p=self.dropout, training=self.training)
         x = self.lin1(x)
-        adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
+        #adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
+        adj_t = self.norm_func(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
         # edge_index, row_n = row_norm(raw_edge_index, edge_weight, num_nodes, dtype=torch.float)
         # edge_index, column_n = column_norm(raw_edge_index, edge_weight, num_nodes, dtype=torch.float)
         

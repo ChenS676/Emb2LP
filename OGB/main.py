@@ -23,7 +23,6 @@ def argument():
     parser.add_argument('--optimizer', type=str, default='Adam')
     parser.add_argument('--loss_func', type=str, default='AUC')
     parser.add_argument('--neg_sampler', type=str, default='global')
-    parser.add_argument('--data_name', type=str, default='ogbl-collab')
     parser.add_argument('--data_path', type=str, default='~/dataset')
     parser.add_argument('--eval_metric', type=str, default='hits')
     parser.add_argument('--walk_start_type', type=str, default='edge')
@@ -54,6 +53,8 @@ def argument():
     parser.add_argument('--random_walk_augment', type=str2bool, default=False)
     parser.add_argument('--alpha', type=float, default=0.5)
     parser.add_argument('--init', type=str, choices=['SGC', 'RWR', 'KI', 'Random'], default='KI')
+    parser.add_argument('--dataset', type=str, default='ogbl-collab')
+    parser.add_argument('--norm_func', type=str, choices=['gcn_norm', 'col_stochastic_matrix', 'row_stochastic_matrix'], required=True)
     args = parser.parse_args()
     return args
 
@@ -74,7 +75,7 @@ def main():
     device = f'cuda:{args.device}' if torch.cuda.is_available() else 'cpu'
     device = torch.device(device)
 
-    dataset = PygLinkPropPredDataset(name=args.data_name, root=args.data_path)
+    dataset = PygLinkPropPredDataset(name=args.dataset, root=args.data_path)
     data = dataset[0]
 
     if hasattr(data, 'edge_weight'):
@@ -100,7 +101,7 @@ def main():
     print(args)
 
     # create log file and save args
-    log_file_name = 'log_' + args.data_name + '_' + str(int(time.time())) + '.txt'
+    log_file_name = 'log_' + args.dataset + '_' + str(int(time.time())) + '.txt'
     log_file = os.path.join(args.res_dir, log_file_name)
     with open(log_file, 'a') as f:
         f.write(str(args) + '\n')
@@ -109,10 +110,10 @@ def main():
         if data.x is not None:
             data.x = data.x.to(torch.float)
 
-    if args.data_name == 'ogbl-citation2':
+    if args.dataset == 'ogbl-citation2':
         data.adj_t = data.adj_t.to_symmetric()
 
-    if args.data_name == 'ogbl-collab':
+    if args.dataset == 'ogbl-collab':
         # only train edges after specific year
         if args.year > 0 and hasattr(data, 'edge_year'):
             selected_year_index = torch.reshape((split_edge['train']['year'] >= args.year).nonzero(as_tuple=False), (-1,))
@@ -183,7 +184,8 @@ def main():
         train_node_emb=args.train_node_emb,
         pretrain_emb=args.pretrain_emb,
         alpha = args.alpha,
-        init = args.init
+        init = args.init,
+        args = args
     )
 
     total_params = sum(p.numel() for param in model.para_list for p in param)
@@ -192,7 +194,7 @@ def main():
     with open(log_file, 'a') as f:
         f.write(total_params_print + '\n')
 
-    evaluator = Evaluator(name=args.data_name)
+    evaluator = Evaluator(name=args.dataset)
 
     if args.eval_metric == 'hits':
         loggers = {
@@ -212,6 +214,7 @@ def main():
         else:
             rw_start = torch.arange(0, num_nodes, dtype=torch.long).to(device)
 
+    beta_values = []
     for run in range(args.runs):
         model.param_init()
         start_time = time.time()
@@ -236,6 +239,11 @@ def main():
                                batch_size=args.batch_size,
                                neg_sampler_name=args.neg_sampler,
                                num_neg=args.num_neg)
+
+             # Save beta values along with their layer indices on the last epoch
+            if epoch == args.epochs:
+                beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.temp.detach().cpu())]
+                beta_values.extend(beta_values_epoch)
 
             if epoch % args.eval_steps == 0:
                 results = model.test(data, split_edge,
@@ -274,6 +282,9 @@ def main():
                 print(key, file=f)
                 loggers[key].print_statistics(run, f=f, last_best=args.eval_last_best)
 
+    with open('results.txt', 'a') as f:
+        f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}, Norm function: {args.norm_func}\n")
+
     for key in loggers.keys():
         print(key)
         loggers[key].print_statistics(last_best=args.eval_last_best)
@@ -281,6 +292,11 @@ def main():
             print(key, file=f)
             loggers[key].print_statistics(f=f, last_best=args.eval_last_best)
 
+    # Save beta values to a file
+    with open('beta_values.txt', 'a') as f:
+        f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}\n")
+        for epoch, layer, value in beta_values:
+            f.write(f'{epoch}\t{layer}\t{value}\n')
 
 if __name__ == "__main__":
     main()

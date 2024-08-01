@@ -45,7 +45,7 @@ class BaseModel(object):
     def __init__(self, lr, dropout, grad_clip_norm, gnn_num_layers, mlp_num_layers, emb_hidden_channels,
                  gnn_hidden_channels, mlp_hidden_channels, num_nodes, num_node_feats, gnn_encoder_name,
                  predictor_name, loss_func, optimizer_name, device, use_node_feats, train_node_emb,
-                 pretrain_emb, alpha, init):
+                 pretrain_emb, alpha, init, args):
         self.loss_func_name = loss_func
         self.num_nodes = num_nodes
         self.num_node_feats = num_node_feats
@@ -70,7 +70,7 @@ class BaseModel(object):
                                         num_layers=gnn_num_layers,
                                         dropout=dropout,
                                         encoder_name=gnn_encoder_name,
-                                        alpha=alpha, init=init).to(device)
+                                        alpha=alpha, init=init, args=args).to(device)
 
         # Predict Layer
         self.predictor = create_predictor_layer(hidden_channels=mlp_hidden_channels,
@@ -250,9 +250,9 @@ def create_input_layer(num_nodes, num_node_feats, hidden_channels, use_node_feat
     return input_dim, emb
 
 
-def create_gnn_layer(input_channels, hidden_channels, num_layers, dropout, encoder_name, alpha, init):
+def create_gnn_layer(input_channels, hidden_channels, num_layers, dropout, encoder_name, alpha, init, args):
     if encoder_name.upper() == 'HLGNN':
-        return HLGNN(input_channels, hidden_channels, hidden_channels, num_layers, dropout, alpha, init)
+        return HLGNN(input_channels, hidden_channels, hidden_channels, num_layers, dropout, alpha, init, args)
     elif encoder_name.upper() == 'GCN':
         return GCN(input_channels, hidden_channels, hidden_channels, num_layers, dropout)
     elif encoder_name.upper() == 'WSAGE':
