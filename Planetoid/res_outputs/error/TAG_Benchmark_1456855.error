@@ -1,0 +1,10 @@
+/home/aifb/cc7738/anaconda3/envs/ss/lib/python3.9/site-packages/torch_geometric/deprecation.py:26: UserWarning: 'train_test_split_edges' is deprecated, use 'transforms.RandomLinkSplit' instead
+  warnings.warn(out)
+Traceback (most recent call last):
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/Planetoid/planetoid.py", line 220, in <module>
+    main()
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/Planetoid/planetoid.py", line 150, in main
+    model = HLGNN(data, args).to(device)
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/Planetoid/model.py", line 32, in __init__
+    self.norm_func = globals()[args.norm_func]
+KeyError: 'raw_stochastic_matrix'

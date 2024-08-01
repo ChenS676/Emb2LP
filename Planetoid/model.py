@@ -29,6 +29,7 @@ class HLGNN(MessagePassing):
         self.init = args.init
         self.alpha = args.alpha
         self.dropout = args.dropout
+        self.norm_func = globals()[args.norm_func]
         self.lin1 = Linear(data.num_features, data.num_features)
 
         assert self.init in ['SGC', 'RWR', 'KI', 'Random']
@@ -39,6 +40,7 @@ class HLGNN(MessagePassing):
         elif self.init == 'RWR':
             TEMP = self.alpha * (1-self.alpha) ** np.arange(self.K+1)
             TEMP[-1] = (1-self.alpha) ** self.K
+            TEMP = (1 - self.alpha) * self.alpha ** np.arange(self.K+1)
             TEMP = TEMP / np.sum(np.abs(TEMP))
         elif self.init == 'KI':
             TEMP = self.alpha ** np.arange(self.K+1)
@@ -49,8 +51,6 @@ class HLGNN(MessagePassing):
             TEMP = TEMP / np.sum(np.abs(TEMP))
 
         self.temp = Parameter(torch.tensor(TEMP))
-        # alpha for Propаgation Operator
-        self.a = Parameter(torch.tensor(3 * [self.alpha], dtype=torch.float32))
         # self.beta = Parameter(torch.zeros(3))
         
     def reset_parameters(self):
@@ -60,7 +60,7 @@ class HLGNN(MessagePassing):
             self.temp.data[self.alpha]= 1.0
         elif self.init == 'RWR':
             for k in range(self.K+1):
-                self.temp.data[k] = self.alpha * (1-self.alpha) ** k
+               self.temp.data[k] = self.alpha * (1-self.alpha) ** k
             self.temp.data[-1] = (1-self.alpha) ** self.K
             self.temp.data = self.temp.data / torch.sum(torch.abs(self.temp.data))
         elif self.init == 'KI':
@@ -77,12 +77,7 @@ class HLGNN(MessagePassing):
         x = F.dropout(x, p=self.dropout, training=self.training)
         x = self.lin1(x)
         # adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
-        if self.init == 'RWR':
-            adj_t = row_stochastic_matrix(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
-        elif self.init == 'KI':
-            adj_t = adj_t
-        else: # I don't know about remain cases
-            adj_t = gcn_norm(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
+        adj_t = self.norm_func(adj_t, edge_weight, adj_t.size(0), dtype=torch.float)
         # edge_index, row_n = row_norm(raw_edge_index, edge_weight, num_nodes, dtype=torch.float)
         # edge_index, column_n = column_norm(raw_edge_index, edge_weight, num_nodes, dtype=torch.float)
         

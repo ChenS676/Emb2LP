@@ -1,0 +1,171 @@
+Type Heuristic:RWR, Dataset: citeseer
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 84.10 ± 4.29
+  Final Train: 100.00 ± 0.00
+   Final Test: 76.22 ± 3.20
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 93.26 ± 2.27
+  Final Train: 100.00 ± 0.00
+   Final Test: 86.48 ± 2.52
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 97.05 ± 1.41
+  Final Train: 100.00 ± 0.00
+   Final Test: 90.97 ± 2.17
+
+Type Heuristic:RWR, Dataset: citeseer
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 86.87 ± 2.94
+  Final Train: 100.00 ± 0.01
+   Final Test: 78.88 ± 2.54
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 95.33 ± 1.58
+  Final Train: 100.00 ± 0.00
+   Final Test: 91.85 ± 1.24
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 98.02 ± 1.10
+  Final Train: 100.00 ± 0.00
+   Final Test: 95.49 ± 1.51
+
+Type Heuristic:RWR, Dataset: citeseer
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 87.62 ± 2.58
+  Final Train: 100.00 ± 0.01
+   Final Test: 77.87 ± 2.85
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 94.67 ± 1.50
+  Final Train: 100.00 ± 0.00
+   Final Test: 90.92 ± 1.32
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 97.75 ± 1.29
+  Final Train: 100.00 ± 0.00
+   Final Test: 94.59 ± 1.50
+
+Type Heuristic:RWR, Dataset: cora, Norm function: gcn_norm
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 84.14 ± 1.85
+  Final Train: 100.00 ± 0.00
+   Final Test: 72.54 ± 3.99
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 91.60 ± 2.94
+  Final Train: 100.00 ± 0.01
+   Final Test: 87.63 ± 1.43
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 94.37 ± 2.53
+  Final Train: 100.00 ± 0.00
+   Final Test: 92.03 ± 1.46
+
+Type Heuristic:RWR, Dataset: cora, Norm function: col_stochastic_matrix
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 84.30 ± 1.91
+  Final Train: 100.00 ± 0.01
+   Final Test: 72.14 ± 3.54
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 93.54 ± 2.16
+  Final Train: 100.00 ± 0.01
+   Final Test: 86.96 ± 1.76
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 96.46 ± 1.46
+  Final Train: 100.00 ± 0.00
+   Final Test: 92.05 ± 2.91
+
+Type Heuristic:RWR, Dataset: cora, Norm function: row_stochastic_matrix
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 78.86 ± 1.60
+  Final Train: 99.97 ± 0.04
+   Final Test: 64.16 ± 1.88
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 89.89 ± 2.31
+  Final Train: 99.98 ± 0.06
+   Final Test: 85.71 ± 1.59
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 93.84 ± 2.19
+  Final Train: 99.99 ± 0.02
+   Final Test: 91.63 ± 1.38
+
+Type Heuristic:KI, Dataset: pubmed, Norm function: gcn_norm
+All runs:
+Highest Train: 99.90 ± 0.17
+Highest Valid: 77.87 ± 0.59
+  Final Train: 97.55 ± 0.91
+   Final Test: 48.03 ± 6.95
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 90.19 ± 0.38
+  Final Train: 99.99 ± 0.02
+   Final Test: 79.71 ± 0.92
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 93.31 ± 0.36
+  Final Train: 100.00 ± 0.00
+   Final Test: 87.22 ± 0.50
+
+Type Heuristic:KI, Dataset: pubmed, Norm function: row_stochastic_matrix
+All runs:
+Highest Train: 96.55 ± 3.95
+Highest Valid: 54.03 ± 1.95
+  Final Train: 93.36 ± 4.44
+   Final Test: 30.34 ± 3.08
+
+All runs:
+Highest Train: 99.97 ± 0.09
+Highest Valid: 74.04 ± 0.62
+  Final Train: 99.12 ± 0.80
+   Final Test: 57.76 ± 2.18
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 83.55 ± 0.56
+  Final Train: 99.28 ± 0.66
+   Final Test: 68.63 ± 1.03
+
+Type Heuristic:KI, Dataset: pubmed, Norm function: col_stochastic_matrix
+All runs:
+Highest Train: 99.81 ± 0.37
+Highest Valid: 75.31 ± 1.46
+  Final Train: 98.17 ± 2.15
+   Final Test: 55.29 ± 3.31
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 90.26 ± 0.50
+  Final Train: 99.97 ± 0.05
+   Final Test: 78.45 ± 0.98
+
+All runs:
+Highest Train: 100.00 ± 0.00
+Highest Valid: 93.80 ± 0.32
+  Final Train: 99.99 ± 0.02
+   Final Test: 87.13 ± 0.53
+

@@ -31,13 +31,25 @@ class Logger(object):
                 best_results.append((train1, valid, train2, test))
 
             best_result = torch.tensor(best_results)
-
+            
+            output = []
             print(f'All runs:')
+            output.append('All runs:')
             r = best_result[:, 0]
             print(f'Highest Train: {r.mean():.2f} ± {r.std():.2f}')
+            output.append(f'Highest Train: {r.mean():.2f} ± {r.std():.2f}')
             r = best_result[:, 1]
             print(f'Highest Valid: {r.mean():.2f} ± {r.std():.2f}')
+            output.append(f'Highest Valid: {r.mean():.2f} ± {r.std():.2f}')
             r = best_result[:, 2]
             print(f'  Final Train: {r.mean():.2f} ± {r.std():.2f}')
+            output.append(f'  Final Train: {r.mean():.2f} ± {r.std():.2f}')
             r = best_result[:, 3]
             print(f'   Final Test: {r.mean():.2f} ± {r.std():.2f}')
+            output.append(f'   Final Test: {r.mean():.2f} ± {r.std():.2f}')
+
+            with open('results.txt', 'a') as f:
+                for line in output:
+                    print(line)
+                    f.write(line + '\n')
+                f.write('\n')

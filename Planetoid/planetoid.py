@@ -130,6 +130,7 @@ def main():
     parser.add_argument('--alpha', type=float, default=0.2)
     parser.add_argument('--init', type=str, choices=['SGC', 'RWR', 'KI', 'Random', 'WS', 'Null'], default='KI')
     parser.add_argument('--dataset', type=str, default='cora')
+    parser.add_argument('--norm_func', type=str, choices=['gcn_norm', 'col_stochastic_matrix', 'row_stochastic_matrix'], required=True)
     
     args = parser.parse_args()
     print(args)
@@ -162,6 +163,7 @@ def main():
         'Hits@100': Logger(args.runs, args),
     }
 
+    beta_values = []
     for run in range(args.runs):
         model.reset_parameters()
         predictor.reset_parameters()
@@ -170,6 +172,11 @@ def main():
         start_time = time.time()
         for epoch in range(1, 1 + args.epochs):
             loss = train(model, predictor, data, split_edge, optimizer, args.batch_size)
+            
+            # Save beta values along with their layer indices on the last epoch
+            if epoch == args.epochs:
+                beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.temp.detach().cpu())]
+                beta_values.extend(beta_values_epoch)
 
             if epoch % args.eval_steps == 0:
                 results = test(model, predictor, data, split_edge, evaluator, args.batch_size)
@@ -196,11 +203,18 @@ def main():
         for key in loggers.keys():
             print(key)
             loggers[key].print_statistics(run)
+    
+    with open('results.txt', 'a') as f:
+        f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}, Norm function: {args.norm_func}\n")
 
     for key in loggers.keys():
         print(key)
         loggers[key].print_statistics()
-
-
+    
+    # Save beta values to a file
+    with open('beta_values.txt', 'a') as f:
+        f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}\n")
+        for epoch, layer, value in beta_values:
+            f.write(f'{epoch}\t{layer}\t{value}\n')
 if __name__ == "__main__":
     main()

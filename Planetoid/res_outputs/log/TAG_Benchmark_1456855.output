@@ -1,0 +1,22 @@
+Namespace(device=0, log_steps=1, use_valedges_as_input=False, mlp_num_layers=3, hidden_channels=8192, dropout=0.5, batch_size=65536, lr=0.001, epochs=100, eval_steps=1, runs=10, K=20, alpha=0.2, init='RWR', dataset='cora', norm_func='raw_stochastic_matrix')
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1456855
+Cluster: haic
+User/Group: cc7738/aifb
+Account: aifb
+State: FAILED (exit code 1)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1712
+CPU Utilized: 00:00:06
+CPU Efficiency: 14.29% of 00:00:42 core-walltime
+Job Wall-clock time: 00:00:21
+Starttime: Wed Jul 31 17:38:01 2024
+Endtime: Wed Jul 31 17:38:22 2024
+Memory Utilized: 657.92 MB
+Memory Efficiency: 0.13% of 489.84 GB
+Energy Consumed: 4066 Joule / 1.12944444444444 Watthours
+Average node power draw: 193.619047619048 Watt
