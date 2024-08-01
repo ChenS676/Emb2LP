@@ -22,6 +22,10 @@ module load devel/cmake/3.18
 module load devel/cuda/11.8
 module load compiler/gnu/12
 
-#python3 planetoid.py --dataset cora --runs 10 --norm_func row_stochastic_matrix --mlp_num_layers 3 --hidden_channels 8192 --dropout 0.5 --epochs 100 --K 20 --alpha 0.2 --init RWR
+
+# python3 planetoid.py --dataset cora --runs 10 --norm_func row_stochastic_matrix --mlp_num_layers 3 --hidden_channels 8192 --dropout 0.5 --epochs 100 --K 20 --alpha 0.2 --init RWR
 # python3 planetoid.py --dataset citeseer --runs 10 --norm_func gcn_norm --mlp_num_layers 2 --hidden_channels 8192 --dropout 0.5 --epochs 100 --K 20 --alpha 0.2 --init RWR
-python3 planetoid.py --dataset pubmed --runs 10 --norm_func col_stochastic_matrix --mlp_num_layers 3 --hidden_channels 512 --dropout 0.6 --epochs 300 --K 20 --alpha 0.2 --init KI
+# python3 planetoid.py --dataset pubmed --runs 10 --norm_func col_stochastic_matrix --mlp_num_layers 3 --hidden_channels 512 --dropout 0.6 --epochs 300 --K 20 --alpha 0.2 --init KI
+
+python amazon.py --dataset photo --runs 10 --norm_func gcn_norm --mlp_num_layers 3 --hidden_channels 512 --dropout 0.6 --epochs 200 --K 20 --alpha 0.2 --init RWR
+# python amazon.py --dataset computers --runs 10 --norm_func gcn_norm --mlp_num_layers 3 --hidden_channels 512 --dropout 0.6 --epochs 200 --K 20 --alpha 0.2 --init RWR
