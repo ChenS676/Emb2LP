@@ -2,7 +2,14 @@
 import torch
 import numpy as np
 from negative_sample import global_neg_sample, global_perm_neg_sample, local_neg_sample
-
+from torch_geometric.typing import (
+    Adj,
+    OptPairTensor,
+    OptTensor,
+    SparseTensor,
+    torch_sparse,
+)
+from typing import Optional
 
 def get_pos_neg_edges(split, split_edge, edge_index=None, num_nodes=None, neg_sampler_name=None, num_neg=None):
     if 'edge' in split_edge['train']:
@@ -79,6 +86,54 @@ def evaluate_mrr(evaluator, pos_val_pred, neg_val_pred,
 
     return results
 
+# A_rs - Row-Stochastic Matrix
+def row_stochastic_matrix(    
+    edge_index: Adj,
+    edge_weight: OptTensor = None,
+    num_nodes: Optional[int] = None,
+    improved: bool = False,
+    add_self_loops: bool = True,
+    flow: str = "source_to_target",
+    dtype: Optional[torch.dtype] = None,
+):
+    adj_t = edge_index
+
+    if not adj_t.has_value():
+        adj_t = adj_t.fill_value(1., dtype=dtype)
+    if add_self_loops:
+        adj_t = torch_sparse.fill_diag(adj_t, 1)
+
+    deg = torch_sparse.sum(adj_t, dim=1)
+    deg_inv = deg.pow_(-1)
+    deg_inv.masked_fill_(deg_inv == float('inf'), 0.)
+    # adj_t = torch_sparse.mul(deg_inv.view(-1, 1), adj_t) doesn't work!
+    adj_t = torch_sparse.mul(adj_t, deg_inv.view(-1, 1))
+
+    return adj_t
+
+# A_cs - Column-Stochastic Matrix
+def col_stochastic_matrix(
+    edge_index: Adj,
+    edge_weight: OptTensor = None,
+    num_nodes: Optional[int] = None,
+    improved: bool = False,
+    add_self_loops: bool = True,
+    flow: str = "source_to_target",
+    dtype: Optional[torch.dtype] = None,
+):
+    adj_t = edge_index
+
+    if not adj_t.has_value():
+        adj_t = adj_t.fill_value(1., dtype=dtype)
+    if add_self_loops:
+        adj_t = torch_sparse.fill_diag(adj_t, 1)
+
+    deg = torch_sparse.sum(adj_t, dim=1)
+    deg_inv = deg.pow_(-1)
+    deg_inv.masked_fill_(deg_inv == float('inf'), 0.)
+    adj_t = torch_sparse.mul(adj_t, deg_inv.view(1, -1))
+
+    return adj_t
 
 def gcn_normalization(adj_t):
     adj_t = adj_t.set_diag()

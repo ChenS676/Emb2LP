@@ -1,0 +1,22 @@
+Namespace(device=0, encoder='HLGNN', predictor='DOT', optimizer='Adam', loss_func='AUC', neg_sampler='global', data_path='~/dataset', eval_metric='hits', walk_start_type='edge', res_dir='log', pretrain_emb=None, gnn_num_layers=15, mlp_num_layers=2, emb_hidden_channels=256, gnn_hidden_channels=256, mlp_hidden_channels=256, dropout=0.3, grad_clip_norm=2.0, batch_size=65536, lr=0.001, num_neg=1, walk_length=5, epochs=800, log_steps=1, eval_steps=5, runs=10, year=2010, use_lr_decay=False, use_node_feats=True, use_coalesce=False, train_node_emb=True, use_valedges_as_input=True, eval_last_best=True, random_walk_augment=False, alpha=0.5, init='KI', dataset='ogbl-collab', norm_func='col_stochastic_matrix')
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1457177
+Cluster: haic
+User/Group: cc7738/aifb
+Account: aifb
+State: FAILED (exit code 1)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1705
+CPU Utilized: 00:00:05
+CPU Efficiency: 16.67% of 00:00:30 core-walltime
+Job Wall-clock time: 00:00:15
+Starttime: Sat Aug  3 17:17:53 2024
+Endtime: Sat Aug  3 17:18:08 2024
+Memory Utilized: 3.88 MB
+Memory Efficiency: 0.00% of 489.84 GB
+Energy Consumed: 2409 Joule / 0.669166666666667 Watthours
+Average node power draw: 160.6 Watt

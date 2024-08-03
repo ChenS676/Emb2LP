@@ -32,7 +32,7 @@ def main():
     plt.title(f'Beta values at layer for {data_name}')
 
     # Save the figure as a PNG file
-    plt.savefig(f'beta_values_{data_name.lower()}.png')
+    plt.savefig(f'graph_results/beta_values_{data_name.lower()}.png')
 
     # If you still want to display the plot, you can uncomment the following line
     # plt.show()

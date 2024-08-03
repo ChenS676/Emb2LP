@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from ogb.linkproppred import PygLinkPropPredDataset
+
 from ogb.linkproppred import Evaluator
 import argparse
 import time
@@ -68,14 +69,21 @@ def str2bool(v):
         return False
     else:
         raise argparse.ArgumentTypeError('Boolean value expected.')
-
+    
+def create_folder_if_not_exists(folder_path):
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print(f'Folder "{folder_path}" created.')
+    else:
+        print(f'Folder "{folder_path}" already exists.')
 
 def main():
     args = argument()
     device = f'cuda:{args.device}' if torch.cuda.is_available() else 'cpu'
     device = torch.device(device)
 
-    dataset = PygLinkPropPredDataset(name=args.dataset, root=args.data_path)
+    dataset = PygLinkPropPredDataset(name=args.dataset)
+    
     data = dataset[0]
 
     if hasattr(data, 'edge_weight'):
@@ -282,7 +290,8 @@ def main():
                 print(key, file=f)
                 loggers[key].print_statistics(run, f=f, last_best=args.eval_last_best)
 
-    with open('results.txt', 'a') as f:
+    create_folder_if_not_exists('metrics_and_weights')
+    with open('metrics_and_weights/results.txt', 'a') as f:
         f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}, Norm function: {args.norm_func}\n")
 
     for key in loggers.keys():
@@ -293,7 +302,7 @@ def main():
             loggers[key].print_statistics(f=f, last_best=args.eval_last_best)
 
     # Save beta values to a file
-    with open('beta_values.txt', 'a') as f:
+    with open('metrics_and_weights/beta_values.txt', 'a') as f:
         f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}\n")
         for epoch, layer, value in beta_values:
             f.write(f'{epoch}\t{layer}\t{value}\n')

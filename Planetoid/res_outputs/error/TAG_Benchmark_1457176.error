@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 311, in <module>
+    main()
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 114, in main
+    with open(log_file, 'a') as f:
+FileNotFoundError: [Errno 2] No such file or directory: 'log/log_ogbl-collab_1722698265.txt'

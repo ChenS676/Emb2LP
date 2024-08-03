@@ -141,7 +141,7 @@ def main():
     path = osp.join('~/dataset', args.dataset)
     dataset = Planetoid(path, args.dataset)
     
-    split_edge = do_edge_split(dataset)
+    split_edge = do_edge_split(dataset, True)
     data = dataset[0]
     data.edge_index = split_edge['train']['edge'].t()
     data = T.ToSparseTensor(remove_edge_index=False)(data)
@@ -204,7 +204,7 @@ def main():
             print(key)
             loggers[key].print_statistics(run)
     
-    with open('results.txt', 'a') as f:
+    with open('metrics_and_weights/results.txt', 'a') as f:
         f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}, Norm function: {args.norm_func}\n")
 
     for key in loggers.keys():
@@ -212,7 +212,7 @@ def main():
         loggers[key].print_statistics()
     
     # Save beta values to a file
-    with open('beta_values.txt', 'a') as f:
+    with open('metrics_and_weights/beta_values.txt', 'a') as f:
         f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}\n")
         for epoch, layer, value in beta_values:
             f.write(f'{epoch}\t{layer}\t{value}\n')

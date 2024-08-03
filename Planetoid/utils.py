@@ -90,6 +90,19 @@ def col_stochastic_matrix(
 
     return adj_t
 
+def check_data_leakage(pos_edge_idx, neg_edge_idx):
+    leakage = False
+
+    pos_edge_idx_set = set(map(tuple, pos_edge_idx.t().tolist()))
+    neg_edge_idx_set = set(map(tuple, neg_edge_idx.t().tolist()))
+
+    if pos_edge_idx_set & neg_edge_idx_set:
+        leakage = True
+        print("Data leakage found between positive and negative samples.")
+        raise Exception("Data leakage detected.")
+    
+    if not leakage:
+        print("No data leakage found.")
 
 def do_edge_split(dataset, fast_split=False, val_ratio=0.05, test_ratio=0.1):
     data = dataset[0]
@@ -102,6 +115,7 @@ def do_edge_split(dataset, fast_split=False, val_ratio=0.05, test_ratio=0.1):
         data.train_neg_edge_index = negative_sampling(
             edge_index, num_nodes=data.num_nodes,
             num_neg_samples=data.train_pos_edge_index.size(1))
+        check_data_leakage(data.train_pos_edge_index, data.train_neg_edge_index)
     else:
         num_nodes = data.num_nodes
         row, col = data.edge_index
@@ -126,6 +140,9 @@ def do_edge_split(dataset, fast_split=False, val_ratio=0.05, test_ratio=0.1):
         data.val_neg_edge_index = neg_edge_index[:, :n_v]
         data.test_neg_edge_index = neg_edge_index[:, n_v:n_v + n_t]
         data.train_neg_edge_index = neg_edge_index[:, n_v + n_t:]
+        check_data_leakage(data.train_pos_edge_index, data.train_neg_edge_index)
+        check_data_leakage(data.val_pos_edge_index, data.val_neg_edge_index)
+        check_data_leakage(data.test_pos_edge_index, data.test_neg_edge_index)
     
     split_edge = {'train': {}, 'valid': {}, 'test': {}}
     split_edge['train']['edge'] = data.train_pos_edge_index.t()
