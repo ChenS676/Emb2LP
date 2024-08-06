@@ -11,11 +11,13 @@ import numpy as np
 import torch.nn as nn
 
 class GraphGeneration():
-    def __init__(self, m, n, emb_dim, graph_type):
+    def __init__(self, m, n, emb_dim, graph_type, heterophily=False, homophily=False):
         self.m = m
         self.n = n
         self.emb_dim = emb_dim
         self.graph_type = graph_type
+        self.heterophily = heterophily
+        self.homophily = homophily
         
     def create_kagome_lattice(self):
         """ Create a Kagome lattice and return its NetworkX graph and positions. """
@@ -94,6 +96,21 @@ class GraphGeneration():
         # Create NetworkX graph from adjacency matrix
         G = nx.from_numpy_array(adj_matrix)
         
+        # Assign labels in a checkerboard pattern
+        if self.heterophily:
+            for x in range(self.m):
+                for y in range(self.n):
+                    current_id = node_id(x, y)
+                    G.nodes[current_id]['label'] = (x + y) % 2
+        
+        if self.homophily:
+            for x in range(self.m):
+                for y in range(self.n):
+                    current_id = node_id(x, y)
+                    if current_id >= len(G.nodes) / 2:
+                        G.nodes[current_id]['label'] = 1
+                    else:
+                        G.nodes[current_id]['label'] = 0
         return G, pos
 
     def create_grid_graph(self):
@@ -111,6 +128,32 @@ class GraphGeneration():
         # Generate the hexagonal lattice graph
         G = nx.hexagonal_lattice_graph(self.m, self.n)
         pos = nx.get_node_attributes(G, 'pos')
+        
+        if self.heterophily:
+            for node in G.nodes:
+                id1, id2 = node
+                G.nodes[node]['label'] = (id1 + id2) % 2
+        
+        if self.homophily:
+            for node in G.nodes:
+                x, _ = node
+                if x >= (max(self.m, self.n) / 2):
+                    G.nodes[node]['label'] = 1
+                else:
+                    G.nodes[node]['label'] = 0
+            
+            # Solves the problem with painting in the center of the network
+            if self.m % 2 == 0 or self.n % 2 == 0:
+                x = max(self.m, self.n) // 2
+                y = 0
+                while y < ((self.m * 2 + 1) / 2):
+                    node = (x, y)
+                    if self.m < self.n:
+                        G.nodes[node]['label'] = 0
+                    else:
+                        G.nodes[node]['label'] = 1
+                    y += 1
+
         return G, pos
 
     def generate_graph(self):
@@ -139,18 +182,27 @@ class GraphGeneration():
         else:
             raise ValueError(f"Invalid graph type: {self.graph_type}")
         
-        data = from_networkx(G)
-        emb_layer = nn.Embedding(data.num_nodes, self.emb_dim)
+        # TODO: CHECK
+        if self.heterophily or self.homophily:
+            labels = [G.nodes[node]['label'] for node in G.nodes]
+            emb_layer = nn.Embedding(2, self.emb_dim)  # 2 classes for checkerboard pattern
+            with torch.no_grad():
+                label_tensor = torch.tensor(labels, dtype=torch.int64)
+                vectors = emb_layer(label_tensor)
+            data.x = vectors    
+        else:
+            data = from_networkx(G)
+            emb_layer = nn.Embedding(data.num_nodes, self.emb_dim)
         
-        pos_list = []
-        for i, x in pos.items():
-            pos_list.append(x[0] * self.m + x[1])
-        
-        pos_array = np.asarray(pos_list)
-        pos_array = np.clip(pos_array, 0, data.num_nodes - 1)
-        with torch.no_grad():
-            pos_tensor = torch.tensor(pos_array, dtype=torch.int64)
-            vectors = emb_layer(pos_tensor)
-        data.x = vectors
+            pos_list = []
+            for _, x in pos.items():
+                pos_list.append(x[0] * self.m + x[1])
+            
+            pos_array = np.asarray(pos_list)
+            pos_array = np.clip(pos_array, 0, data.num_nodes - 1)
+            with torch.no_grad():
+                pos_tensor = torch.tensor(pos_array, dtype=torch.int64)
+                vectors = emb_layer(pos_tensor)
+            data.x = vectors
 
         return data, G, pos
