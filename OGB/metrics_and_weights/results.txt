@@ -1,0 +1,3 @@
+Type Heuristic:KI, Dataset: ogbl-collab, Norm function: gcn_norm
+Type Heuristic:KI, Dataset: ogbl-collab, Norm function: gcn_norm
+Type Heuristic:KI, Dataset: ogbl-ddi, Norm function: gcn_norm

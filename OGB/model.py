@@ -126,7 +126,7 @@ class BaseModel(object):
             loss = auc_loss(pos_out, neg_out, num_neg)
         return loss
 
-    def train(self, data, split_edge, batch_size, neg_sampler_name, num_neg):
+    def train(self, data, split_edge, batch_size, neg_sampler_name, num_neg, writer, epoch):
         self.encoder.train()
         self.predictor.train()
 
@@ -171,7 +171,9 @@ class BaseModel(object):
             total_loss += loss.item() * num_examples
             total_examples += num_examples
 
-        return total_loss / total_examples
+        avg_loss = total_loss / total_examples
+        writer.add_scalar('Loss/train', avg_loss, epoch)
+        return avg_loss
 
     @torch.no_grad()
     def batch_predict(self, h, edges, batch_size):
@@ -183,7 +185,7 @@ class BaseModel(object):
         return pred
 
     @torch.no_grad()
-    def test(self, data, split_edge, batch_size, evaluator, eval_metric):
+    def test(self, data, split_edge, batch_size, evaluator, eval_metric, writer, epoch):
         self.encoder.eval()
         self.predictor.eval()
 
@@ -215,15 +217,19 @@ class BaseModel(object):
                 pos_valid_pred,
                 neg_valid_pred,
                 pos_test_pred,
-                neg_test_pred)
+                neg_test_pred,
+                writer,
+                epoch)
         else:
             results = evaluate_mrr(
                 evaluator,
                 pos_valid_pred,
                 neg_valid_pred,
                 pos_test_pred,
-                neg_test_pred)
-
+                neg_test_pred,
+                writer,
+                epoch)
+        
         return results
 
 

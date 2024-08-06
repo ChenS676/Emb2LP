@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
-from ogb.linkproppred import PygLinkPropPredDataset
-
-from ogb.linkproppred import Evaluator
+import os, sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from ogb.linkproppred import PygLinkPropPredDataset, Evaluator
 import argparse
 import time
 import torch
@@ -10,10 +10,12 @@ import torch_geometric.transforms as T
 from torch_geometric.utils import to_undirected
 from torch_sparse import coalesce, SparseTensor
 from torch_cluster import random_walk
+from torch.utils.tensorboard import SummaryWriter
 
 from logger import Logger
 from model import BaseModel, adjust_lr
 from utils import gcn_normalization, adj_normalization
+from Planetoid.visualization import visualization
 
 
 def argument():
@@ -40,7 +42,7 @@ def argument():
     parser.add_argument('--lr', type=float, default=0.001)
     parser.add_argument('--num_neg', type=int, default=1)
     parser.add_argument('--walk_length', type=int, default=5)
-    parser.add_argument('--epochs', type=int, default=500)
+    parser.add_argument('--epochs', type=int, default=1)
     parser.add_argument('--log_steps', type=int, default=1)
     parser.add_argument('--eval_steps', type=int, default=5)
     parser.add_argument('--runs', type=int, default=1)
@@ -111,6 +113,8 @@ def main():
     # create log file and save args
     log_file_name = 'log_' + args.dataset + '_' + str(int(time.time())) + '.txt'
     log_file = os.path.join(args.res_dir, log_file_name)
+    if os.path.exists(args.res_dir) is False:
+        os.makedirs(args.res_dir)
     with open(log_file, 'a') as f:
         f.write(str(args) + '\n')
 
@@ -223,6 +227,7 @@ def main():
             rw_start = torch.arange(0, num_nodes, dtype=torch.long).to(device)
 
     beta_values = []
+    writer = SummaryWriter()
     for run in range(args.runs):
         model.param_init()
         start_time = time.time()
@@ -246,18 +251,18 @@ def main():
             loss = model.train(data, split_edge,
                                batch_size=args.batch_size,
                                neg_sampler_name=args.neg_sampler,
-                               num_neg=args.num_neg)
+                               num_neg=args.num_neg, writer=writer, epoch=epoch)
 
              # Save beta values along with their layer indices on the last epoch
-            if epoch == args.epochs:
-                beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.temp.detach().cpu())]
+            if epoch == args.epochs and args.encoder.upper() == 'HLGNN':
+                beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.encoder.temp.detach().cpu())]
                 beta_values.extend(beta_values_epoch)
 
             if epoch % args.eval_steps == 0:
                 results = model.test(data, split_edge,
                                      batch_size=args.batch_size,
                                      evaluator=evaluator,
-                                     eval_metric=args.eval_metric)
+                                     eval_metric=args.eval_metric, writer=writer, epoch=epoch)
                 for key, result in results.items():
                     loggers[key].add_result(run, result)
                 if epoch % args.log_steps == 0:
@@ -270,11 +275,14 @@ def main():
                                     f'Learning Rate: {cur_lr:.4f}, '
                                     f'Valid: {100 * valid_res:.2f}%, '
                                     f'Test: {100 * test_res:.2f}%')
+                        writer.add_scalar(f'{key}/Valid', valid_res, epoch)
+                        writer.add_scalar(f'{key}/Test', test_res, epoch)
                         print(key)
                         print(to_print)
                         with open(log_file, 'a') as f:
                             print(key, file=f)
                             print(to_print, file=f)
+                            
                     print('---')
                     print(f'Training Time Per Epoch: {spent_time / args.eval_steps: .4f} s')
                     print('---')
@@ -307,5 +315,7 @@ def main():
         for epoch, layer, value in beta_values:
             f.write(f'{epoch}\t{layer}\t{value}\n')
 
+    visualization(beta_values, args.dataset)
+    writer.close()
 if __name__ == "__main__":
     main()

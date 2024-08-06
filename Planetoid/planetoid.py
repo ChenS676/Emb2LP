@@ -1,22 +1,17 @@
+import os, sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import argparse
-import numpy as np
 import torch
-import torch.nn.functional as F
 from torch.utils.data import DataLoader
-from torch.nn import Parameter, Linear
-from torch_sparse import SparseTensor
 import torch_geometric.transforms as T
-from torch_geometric.nn import MessagePassing, APPNP
-from torch_geometric.nn import GCNConv, SAGEConv
-from torch_geometric.nn.conv.gcn_conv import gcn_norm
-from ogb.linkproppred import PygLinkPropPredDataset, Evaluator
+from ogb.linkproppred import Evaluator
 from utils import *
 from logger import Logger
 import os.path as osp
 from torch_geometric.datasets import Planetoid
 from model import *
 import time
-
+from Synthetic.regular_tiling import *
 
 def train(model, predictor, data, split_edge, optimizer, batch_size):
     predictor.train()
@@ -140,13 +135,14 @@ def main():
     
     path = osp.join('~/dataset', args.dataset)
     dataset = Planetoid(path, args.dataset)
-    
-    split_edge = do_edge_split(dataset, True)
+    split_edge = do_edge_split(dataset[0], True)
     data = dataset[0]
+    
     data.edge_index = split_edge['train']['edge'].t()
+    
     data = T.ToSparseTensor(remove_edge_index=False)(data)
     data = data.to(device)
-   
+
     model = HLGNN(data, args).to(device)
     
     predictor = LinkPredictor(data.num_features, args.hidden_channels, 1, args.mlp_num_layers, args.dropout).to(device)

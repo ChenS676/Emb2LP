@@ -76,7 +76,7 @@ python main.py --data_name ogbl-collab --predictor DOT --use_valedges_as_input T
 
 ```bash
 cd OGB
-python main.py --data_name ogbl-ddi --emb_hidden_channels 512 --gnn_hidden_channels 512 --mlp_hidden_channels 512 --num_neg 3 --dropout 0.3 --loss_func WeightedHingeAUC
+python main.py --data_name ogbl-ddi --emb_hidden_channels 512 --gnn_hidden_channels 512 --mlp_hidden_channels 512 --epochs 500 --num_neg 3 --dropout 0.3 --loss_func WeightedHingeAUC
 ```
 
 #### ogbl-ppa

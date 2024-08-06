@@ -1,11 +1,13 @@
 
+import os, sys
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 import numpy as np
 import networkx as nx
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 import torch
 from torch_geometric.utils import from_networkx
 import numpy as np
-from matplotlib import cm
+# from matplotlib import cm
 import torch.nn as nn
 
 def plot_graph(G, pos=None, title="Graph", node_size=300, node_color='skyblue', with_labels=True):
@@ -177,6 +179,7 @@ def gen_pyg_from_nx(m, n, emb_dim=32, graph_type='grid'):
         pos_list.append(x[0] * m + x[1])
     
     pos_array = np.asarray(pos_list)
+    pos_array = np.clip(pos_array, 0, data.num_nodes - 1)
     with torch.no_grad():
         pos_tensor = torch.tensor(pos_array, dtype=torch.int64)
         vectors = emb_layer(pos_tensor)

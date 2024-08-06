@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 311, in <module>
+    main()
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 253, in main
+    beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.temp.detach().cpu())]
+AttributeError: 'BaseModel' object has no attribute 'temp'

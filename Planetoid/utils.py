@@ -104,8 +104,7 @@ def check_data_leakage(pos_edge_idx, neg_edge_idx):
     if not leakage:
         print("No data leakage found.")
 
-def do_edge_split(dataset, fast_split=False, val_ratio=0.05, test_ratio=0.1):
-    data = dataset[0]
+def do_edge_split(data, fast_split=False, val_ratio=0.05, test_ratio=0.1):
     random.seed(234)
     torch.manual_seed(234)
 

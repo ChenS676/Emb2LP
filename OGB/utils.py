@@ -49,7 +49,7 @@ def get_pos_neg_edges(split, split_edge, edge_index=None, num_nodes=None, neg_sa
 
 
 def evaluate_hits(evaluator, pos_val_pred, neg_val_pred,
-                  pos_test_pred, neg_test_pred):
+                  pos_test_pred, neg_test_pred, writer, epoch):
     results = {}
     for K in [20, 50, 100]:
         evaluator.K = K
@@ -64,11 +64,13 @@ def evaluate_hits(evaluator, pos_val_pred, neg_val_pred,
 
         results[f'Hits@{K}'] = (valid_hits, test_hits)
 
+    writer.add_scalar(f'Accuracy/Valid_Hits@{K}', valid_hits, epoch)
+    writer.add_scalar(f'Accuracy/Test_Hits@{K}', test_hits, epoch)
     return results
 
 
 def evaluate_mrr(evaluator, pos_val_pred, neg_val_pred,
-                 pos_test_pred, neg_test_pred):
+                 pos_test_pred, neg_test_pred, writer, epoch):
     neg_val_pred = neg_val_pred.view(pos_val_pred.shape[0], -1)
     neg_test_pred = neg_test_pred.view(pos_test_pred.shape[0], -1)
     results = {}
@@ -84,6 +86,8 @@ def evaluate_mrr(evaluator, pos_val_pred, neg_val_pred,
 
     results['MRR'] = (valid_mrr, test_mrr)
 
+    writer.add_scalar(f'Accuracy/Valid_MRR', valid_mrr, epoch)
+    writer.add_scalar(f'Accuracy/Test_Hits_MRR', test_mrr, epoch)
     return results
 
 # A_rs - Row-Stochastic Matrix

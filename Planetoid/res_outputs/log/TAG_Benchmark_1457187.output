@@ -1,0 +1,21 @@
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1457187
+Cluster: haic
+User/Group: cc7738/aifb
+Account: aifb
+State: CANCELLED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1705
+CPU Utilized: 00:00:00
+CPU Efficiency: 0.00% of 01:12:00 core-walltime
+Job Wall-clock time: 00:36:00
+Starttime: Sat Aug  3 19:00:23 2024
+Endtime: Sat Aug  3 19:36:23 2024
+Memory Utilized: 10.48 GB
+Memory Efficiency: 2.14% of 489.84 GB
+Energy Consumed: 1446826 Joule / 401.896111111111 Watthours
+Average node power draw: 669.826851851852 Watt

@@ -1,0 +1,19 @@
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1457268
+Cluster: haic
+User/Group: cc7738/aifb
+Account: aifb
+State: FAILED (exit code 1)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1704
+CPU Utilized: 00:00:04
+CPU Efficiency: 14.29% of 00:00:28 core-walltime
+Job Wall-clock time: 00:00:14
+Starttime: Sun Aug  4 18:53:03 2024
+Endtime: Sun Aug  4 18:53:17 2024
+Memory Utilized: 3.83 MB
+Memory Efficiency: 0.00% of 489.84 GB

@@ -18,8 +18,14 @@ class Logger(object):
             result = 100 * torch.tensor(self.results[run])
             if last_best:
                 # get last max value index by reversing result tensor
+                print(result.size(0))
+                print(result)
+                print(result[:, 0])
                 argmax = result.size(0) - result[:, 0].flip(dims=[0]).argmax().item() - 1
             else:
+                print(result.size())
+                print(result)
+                print(result[:, 0])
                 argmax = result[:, 0].argmax().item()
             print(f'Run {run + 1:02d}:', file=f)
             print(f'Highest Valid: {result[:, 0].max():.2f}', file=f)

@@ -1,0 +1,26 @@
+Namespace(device=0, encoder='HLGNN', predictor='MLP', optimizer='Adam', loss_func='WeightedHingeAUC', neg_sampler='global', data_path='~/dataset', eval_metric='hits', walk_start_type='edge', res_dir='log', pretrain_emb=None, gnn_num_layers=15, mlp_num_layers=2, emb_hidden_channels=512, gnn_hidden_channels=512, mlp_hidden_channels=512, dropout=0.3, grad_clip_norm=2.0, batch_size=65536, lr=0.001, num_neg=3, walk_length=5, epochs=1, log_steps=1, eval_steps=5, runs=1, year=2010, use_lr_decay=False, use_node_feats=False, use_coalesce=False, train_node_emb=True, use_valedges_as_input=False, eval_last_best=False, random_walk_augment=False, alpha=0.5, init='KI', dataset='ogbl-ddi', norm_func='gcn_norm')
+Total number of model parameters is 2710545
+Hits@20
+torch.Size([0])
+tensor([])
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1457479
+Cluster: haic
+User/Group: cc7738/aifb
+Account: aifb
+State: FAILED (exit code 1)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1711
+CPU Utilized: 00:00:10
+CPU Efficiency: 23.81% of 00:00:42 core-walltime
+Job Wall-clock time: 00:00:21
+Starttime: Tue Aug  6 15:08:19 2024
+Endtime: Tue Aug  6 15:08:40 2024
+Memory Utilized: 1.07 GB
+Memory Efficiency: 0.22% of 489.84 GB
+Energy Consumed: 5960 Joule / 1.65555555555556 Watthours
+Average node power draw: 283.809523809524 Watt

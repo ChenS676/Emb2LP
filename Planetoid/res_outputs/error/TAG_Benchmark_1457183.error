@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 311, in <module>
+    
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 253, in main
+    # Save beta values along with their layer indices on the last epoch
+AttributeError: 'BaseModel' object has no attribute 'temp'

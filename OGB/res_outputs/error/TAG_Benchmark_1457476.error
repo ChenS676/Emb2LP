@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 321, in <module>
+    main()
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/main.py", line 296, in main
+    loggers[key].print_statistics(run, last_best=args.eval_last_best)
+  File "/hkfs/work/workspace_haic/scratch/cc7738-TAGBench/Emb2LP/OGB/logger.py", line 26, in print_statistics
+    print(result[:, 0])
+IndexError: too many indices for tensor of dimension 1

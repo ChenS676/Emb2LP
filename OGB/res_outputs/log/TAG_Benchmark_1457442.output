@@ -1,0 +1,2595 @@
+Namespace(device=0, encoder='HLGNN', predictor='DOT', optimizer='Adam', loss_func='AUC', neg_sampler='global', data_path='~/dataset', eval_metric='hits', walk_start_type='edge', res_dir='log', pretrain_emb=None, gnn_num_layers=15, mlp_num_layers=2, emb_hidden_channels=256, gnn_hidden_channels=256, mlp_hidden_channels=256, dropout=0.3, grad_clip_norm=2.0, batch_size=65536, lr=0.001, num_neg=1, walk_length=5, epochs=800, log_steps=1, eval_steps=5, runs=1, year=2010, use_lr_decay=False, use_node_feats=True, use_coalesce=False, train_node_emb=True, use_valedges_as_input=True, eval_last_best=True, random_walk_augment=False, alpha=0.5, init='KI', dataset='ogbl-collab', norm_func='gcn_norm')
+Total number of model parameters is 60480784
+Hits@20
+Run: 01, Epoch: 05, Loss: 8138.0983, Learning Rate: 0.0010, Valid: 15.38%, Test: 13.14%
+Hits@50
+Run: 01, Epoch: 05, Loss: 8138.0983, Learning Rate: 0.0010, Valid: 28.40%, Test: 21.72%
+Hits@100
+Run: 01, Epoch: 05, Loss: 8138.0983, Learning Rate: 0.0010, Valid: 40.29%, Test: 29.38%
+---
+Training Time Per Epoch:  3.7938 s
+---
+Hits@20
+Run: 01, Epoch: 10, Loss: 4984.2626, Learning Rate: 0.0010, Valid: 31.85%, Test: 22.09%
+Hits@50
+Run: 01, Epoch: 10, Loss: 4984.2626, Learning Rate: 0.0010, Valid: 54.71%, Test: 36.78%
+Hits@100
+Run: 01, Epoch: 10, Loss: 4984.2626, Learning Rate: 0.0010, Valid: 66.80%, Test: 45.70%
+---
+Training Time Per Epoch:  3.7544 s
+---
+Hits@20
+Run: 01, Epoch: 15, Loss: 3709.6890, Learning Rate: 0.0010, Valid: 42.68%, Test: 27.87%
+Hits@50
+Run: 01, Epoch: 15, Loss: 3709.6890, Learning Rate: 0.0010, Valid: 67.65%, Test: 44.03%
+Hits@100
+Run: 01, Epoch: 15, Loss: 3709.6890, Learning Rate: 0.0010, Valid: 79.49%, Test: 53.59%
+---
+Training Time Per Epoch:  3.7560 s
+---
+Hits@20
+Run: 01, Epoch: 20, Loss: 2918.3472, Learning Rate: 0.0010, Valid: 50.63%, Test: 31.03%
+Hits@50
+Run: 01, Epoch: 20, Loss: 2918.3472, Learning Rate: 0.0010, Valid: 76.30%, Test: 48.49%
+Hits@100
+Run: 01, Epoch: 20, Loss: 2918.3472, Learning Rate: 0.0010, Valid: 89.46%, Test: 59.66%
+---
+Training Time Per Epoch:  3.7539 s
+---
+Hits@20
+Run: 01, Epoch: 25, Loss: 2422.8632, Learning Rate: 0.0010, Valid: 65.48%, Test: 39.48%
+Hits@50
+Run: 01, Epoch: 25, Loss: 2422.8632, Learning Rate: 0.0010, Valid: 84.61%, Test: 52.95%
+Hits@100
+Run: 01, Epoch: 25, Loss: 2422.8632, Learning Rate: 0.0010, Valid: 94.12%, Test: 62.41%
+---
+Training Time Per Epoch:  3.7514 s
+---
+Hits@20
+Run: 01, Epoch: 30, Loss: 2101.0885, Learning Rate: 0.0010, Valid: 66.16%, Test: 39.19%
+Hits@50
+Run: 01, Epoch: 30, Loss: 2101.0885, Learning Rate: 0.0010, Valid: 91.56%, Test: 57.31%
+Hits@100
+Run: 01, Epoch: 30, Loss: 2101.0885, Learning Rate: 0.0010, Valid: 97.34%, Test: 64.70%
+---
+Training Time Per Epoch:  3.7548 s
+---
+Hits@20
+Run: 01, Epoch: 35, Loss: 1880.2563, Learning Rate: 0.0010, Valid: 78.14%, Test: 45.51%
+Hits@50
+Run: 01, Epoch: 35, Loss: 1880.2563, Learning Rate: 0.0010, Valid: 96.11%, Test: 59.95%
+Hits@100
+Run: 01, Epoch: 35, Loss: 1880.2563, Learning Rate: 0.0010, Valid: 99.03%, Test: 66.08%
+---
+Training Time Per Epoch:  3.7538 s
+---
+Hits@20
+Run: 01, Epoch: 40, Loss: 1761.7888, Learning Rate: 0.0010, Valid: 85.17%, Test: 49.90%
+Hits@50
+Run: 01, Epoch: 40, Loss: 1761.7888, Learning Rate: 0.0010, Valid: 96.02%, Test: 59.50%
+Hits@100
+Run: 01, Epoch: 40, Loss: 1761.7888, Learning Rate: 0.0010, Valid: 99.37%, Test: 66.70%
+---
+Training Time Per Epoch:  3.7514 s
+---
+Hits@20
+Run: 01, Epoch: 45, Loss: 1617.7875, Learning Rate: 0.0010, Valid: 91.94%, Test: 52.76%
+Hits@50
+Run: 01, Epoch: 45, Loss: 1617.7875, Learning Rate: 0.0010, Valid: 98.40%, Test: 60.67%
+Hits@100
+Run: 01, Epoch: 45, Loss: 1617.7875, Learning Rate: 0.0010, Valid: 99.80%, Test: 67.06%
+---
+Training Time Per Epoch:  3.7530 s
+---
+Hits@20
+Run: 01, Epoch: 50, Loss: 1531.3195, Learning Rate: 0.0010, Valid: 90.98%, Test: 52.38%
+Hits@50
+Run: 01, Epoch: 50, Loss: 1531.3195, Learning Rate: 0.0010, Valid: 99.02%, Test: 62.89%
+Hits@100
+Run: 01, Epoch: 50, Loss: 1531.3195, Learning Rate: 0.0010, Valid: 99.84%, Test: 67.89%
+---
+Training Time Per Epoch:  3.7471 s
+---
+Hits@20
+Run: 01, Epoch: 55, Loss: 1461.9426, Learning Rate: 0.0010, Valid: 91.89%, Test: 52.47%
+Hits@50
+Run: 01, Epoch: 55, Loss: 1461.9426, Learning Rate: 0.0010, Valid: 99.42%, Test: 63.07%
+Hits@100
+Run: 01, Epoch: 55, Loss: 1461.9426, Learning Rate: 0.0010, Valid: 99.91%, Test: 67.52%
+---
+Training Time Per Epoch:  3.7460 s
+---
+Hits@20
+Run: 01, Epoch: 60, Loss: 1368.8877, Learning Rate: 0.0010, Valid: 98.79%, Test: 58.20%
+Hits@50
+Run: 01, Epoch: 60, Loss: 1368.8877, Learning Rate: 0.0010, Valid: 99.87%, Test: 64.22%
+Hits@100
+Run: 01, Epoch: 60, Loss: 1368.8877, Learning Rate: 0.0010, Valid: 99.97%, Test: 68.15%
+---
+Training Time Per Epoch:  3.7500 s
+---
+Hits@20
+Run: 01, Epoch: 65, Loss: 1262.1096, Learning Rate: 0.0010, Valid: 98.80%, Test: 57.83%
+Hits@50
+Run: 01, Epoch: 65, Loss: 1262.1096, Learning Rate: 0.0010, Valid: 99.89%, Test: 63.65%
+Hits@100
+Run: 01, Epoch: 65, Loss: 1262.1096, Learning Rate: 0.0010, Valid: 99.99%, Test: 68.08%
+---
+Training Time Per Epoch:  3.7484 s
+---
+Hits@20
+Run: 01, Epoch: 70, Loss: 1194.0505, Learning Rate: 0.0010, Valid: 99.53%, Test: 58.73%
+Hits@50
+Run: 01, Epoch: 70, Loss: 1194.0505, Learning Rate: 0.0010, Valid: 99.97%, Test: 64.42%
+Hits@100
+Run: 01, Epoch: 70, Loss: 1194.0505, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.43%
+---
+Training Time Per Epoch:  3.7501 s
+---
+Hits@20
+Run: 01, Epoch: 75, Loss: 1138.1139, Learning Rate: 0.0010, Valid: 99.76%, Test: 59.37%
+Hits@50
+Run: 01, Epoch: 75, Loss: 1138.1139, Learning Rate: 0.0010, Valid: 99.98%, Test: 64.61%
+Hits@100
+Run: 01, Epoch: 75, Loss: 1138.1139, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.57%
+---
+Training Time Per Epoch:  3.7520 s
+---
+Hits@20
+Run: 01, Epoch: 80, Loss: 1089.2056, Learning Rate: 0.0010, Valid: 99.83%, Test: 58.97%
+Hits@50
+Run: 01, Epoch: 80, Loss: 1089.2056, Learning Rate: 0.0010, Valid: 99.99%, Test: 63.79%
+Hits@100
+Run: 01, Epoch: 80, Loss: 1089.2056, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.47%
+---
+Training Time Per Epoch:  3.7458 s
+---
+Hits@20
+Run: 01, Epoch: 85, Loss: 1054.5448, Learning Rate: 0.0010, Valid: 99.87%, Test: 58.73%
+Hits@50
+Run: 01, Epoch: 85, Loss: 1054.5448, Learning Rate: 0.0010, Valid: 99.99%, Test: 63.79%
+Hits@100
+Run: 01, Epoch: 85, Loss: 1054.5448, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.76%
+---
+Training Time Per Epoch:  3.7505 s
+---
+Hits@20
+Run: 01, Epoch: 90, Loss: 1013.1061, Learning Rate: 0.0010, Valid: 99.93%, Test: 59.54%
+Hits@50
+Run: 01, Epoch: 90, Loss: 1013.1061, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.42%
+Hits@100
+Run: 01, Epoch: 90, Loss: 1013.1061, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.68%
+---
+Training Time Per Epoch:  3.7487 s
+---
+Hits@20
+Run: 01, Epoch: 95, Loss: 990.8983, Learning Rate: 0.0010, Valid: 99.92%, Test: 58.85%
+Hits@50
+Run: 01, Epoch: 95, Loss: 990.8983, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.13%
+Hits@100
+Run: 01, Epoch: 95, Loss: 990.8983, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.06%
+---
+Training Time Per Epoch:  3.7498 s
+---
+Hits@20
+Run: 01, Epoch: 100, Loss: 959.2490, Learning Rate: 0.0010, Valid: 99.97%, Test: 59.52%
+Hits@50
+Run: 01, Epoch: 100, Loss: 959.2490, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.47%
+Hits@100
+Run: 01, Epoch: 100, Loss: 959.2490, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.68%
+---
+Training Time Per Epoch:  3.7422 s
+---
+Hits@20
+Run: 01, Epoch: 105, Loss: 928.9363, Learning Rate: 0.0010, Valid: 99.98%, Test: 59.82%
+Hits@50
+Run: 01, Epoch: 105, Loss: 928.9363, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.18%
+Hits@100
+Run: 01, Epoch: 105, Loss: 928.9363, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.69%
+---
+Training Time Per Epoch:  3.7428 s
+---
+Hits@20
+Run: 01, Epoch: 110, Loss: 900.8744, Learning Rate: 0.0010, Valid: 99.96%, Test: 59.85%
+Hits@50
+Run: 01, Epoch: 110, Loss: 900.8744, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.88%
+Hits@100
+Run: 01, Epoch: 110, Loss: 900.8744, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.25%
+---
+Training Time Per Epoch:  3.7493 s
+---
+Hits@20
+Run: 01, Epoch: 115, Loss: 872.7111, Learning Rate: 0.0010, Valid: 99.99%, Test: 59.84%
+Hits@50
+Run: 01, Epoch: 115, Loss: 872.7111, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.09%
+Hits@100
+Run: 01, Epoch: 115, Loss: 872.7111, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.94%
+---
+Training Time Per Epoch:  3.7448 s
+---
+Hits@20
+Run: 01, Epoch: 120, Loss: 847.2272, Learning Rate: 0.0010, Valid: 99.99%, Test: 59.08%
+Hits@50
+Run: 01, Epoch: 120, Loss: 847.2272, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.46%
+Hits@100
+Run: 01, Epoch: 120, Loss: 847.2272, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.23%
+---
+Training Time Per Epoch:  3.7475 s
+---
+Hits@20
+Run: 01, Epoch: 125, Loss: 845.9067, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.48%
+Hits@50
+Run: 01, Epoch: 125, Loss: 845.9067, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.05%
+Hits@100
+Run: 01, Epoch: 125, Loss: 845.9067, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.11%
+---
+Training Time Per Epoch:  3.7409 s
+---
+Hits@20
+Run: 01, Epoch: 130, Loss: 817.6448, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.38%
+Hits@50
+Run: 01, Epoch: 130, Loss: 817.6448, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.35%
+Hits@100
+Run: 01, Epoch: 130, Loss: 817.6448, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.01%
+---
+Training Time Per Epoch:  3.7465 s
+---
+Hits@20
+Run: 01, Epoch: 135, Loss: 805.4882, Learning Rate: 0.0010, Valid: 99.99%, Test: 59.49%
+Hits@50
+Run: 01, Epoch: 135, Loss: 805.4882, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.08%
+Hits@100
+Run: 01, Epoch: 135, Loss: 805.4882, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.17%
+---
+Training Time Per Epoch:  3.7445 s
+---
+Hits@20
+Run: 01, Epoch: 140, Loss: 789.4647, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.01%
+Hits@50
+Run: 01, Epoch: 140, Loss: 789.4647, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.72%
+Hits@100
+Run: 01, Epoch: 140, Loss: 789.4647, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.85%
+---
+Training Time Per Epoch:  3.7466 s
+---
+Hits@20
+Run: 01, Epoch: 145, Loss: 780.0880, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.23%
+Hits@50
+Run: 01, Epoch: 145, Loss: 780.0880, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.42%
+Hits@100
+Run: 01, Epoch: 145, Loss: 780.0880, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.09%
+---
+Training Time Per Epoch:  3.7421 s
+---
+Hits@20
+Run: 01, Epoch: 150, Loss: 750.3914, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.63%
+Hits@50
+Run: 01, Epoch: 150, Loss: 750.3914, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.80%
+Hits@100
+Run: 01, Epoch: 150, Loss: 750.3914, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.09%
+---
+Training Time Per Epoch:  3.7449 s
+---
+Hits@20
+Run: 01, Epoch: 155, Loss: 734.9744, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.66%
+Hits@50
+Run: 01, Epoch: 155, Loss: 734.9744, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.66%
+Hits@100
+Run: 01, Epoch: 155, Loss: 734.9744, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.30%
+---
+Training Time Per Epoch:  3.7455 s
+---
+Hits@20
+Run: 01, Epoch: 160, Loss: 735.4266, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.23%
+Hits@50
+Run: 01, Epoch: 160, Loss: 735.4266, Learning Rate: 0.0010, Valid: 100.00%, Test: 63.94%
+Hits@100
+Run: 01, Epoch: 160, Loss: 735.4266, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.23%
+---
+Training Time Per Epoch:  3.7437 s
+---
+Hits@20
+Run: 01, Epoch: 165, Loss: 729.1609, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.23%
+Hits@50
+Run: 01, Epoch: 165, Loss: 729.1609, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.48%
+Hits@100
+Run: 01, Epoch: 165, Loss: 729.1609, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.90%
+---
+Training Time Per Epoch:  3.7461 s
+---
+Hits@20
+Run: 01, Epoch: 170, Loss: 696.1489, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.10%
+Hits@50
+Run: 01, Epoch: 170, Loss: 696.1489, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.93%
+Hits@100
+Run: 01, Epoch: 170, Loss: 696.1489, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.63%
+---
+Training Time Per Epoch:  3.7440 s
+---
+Hits@20
+Run: 01, Epoch: 175, Loss: 687.8623, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.99%
+Hits@50
+Run: 01, Epoch: 175, Loss: 687.8623, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.41%
+Hits@100
+Run: 01, Epoch: 175, Loss: 687.8623, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.42%
+---
+Training Time Per Epoch:  3.7452 s
+---
+Hits@20
+Run: 01, Epoch: 180, Loss: 684.8568, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.44%
+Hits@50
+Run: 01, Epoch: 180, Loss: 684.8568, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.78%
+Hits@100
+Run: 01, Epoch: 180, Loss: 684.8568, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.64%
+---
+Training Time Per Epoch:  3.7443 s
+---
+Hits@20
+Run: 01, Epoch: 185, Loss: 672.9912, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.78%
+Hits@50
+Run: 01, Epoch: 185, Loss: 672.9912, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.80%
+Hits@100
+Run: 01, Epoch: 185, Loss: 672.9912, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.84%
+---
+Training Time Per Epoch:  3.7414 s
+---
+Hits@20
+Run: 01, Epoch: 190, Loss: 663.0972, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.42%
+Hits@50
+Run: 01, Epoch: 190, Loss: 663.0972, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.45%
+Hits@100
+Run: 01, Epoch: 190, Loss: 663.0972, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.19%
+---
+Training Time Per Epoch:  3.7453 s
+---
+Hits@20
+Run: 01, Epoch: 195, Loss: 647.7591, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.68%
+Hits@50
+Run: 01, Epoch: 195, Loss: 647.7591, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.21%
+Hits@100
+Run: 01, Epoch: 195, Loss: 647.7591, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.92%
+---
+Training Time Per Epoch:  3.7428 s
+---
+Hits@20
+Run: 01, Epoch: 200, Loss: 652.4178, Learning Rate: 0.0010, Valid: 100.00%, Test: 58.80%
+Hits@50
+Run: 01, Epoch: 200, Loss: 652.4178, Learning Rate: 0.0010, Valid: 100.00%, Test: 64.31%
+Hits@100
+Run: 01, Epoch: 200, Loss: 652.4178, Learning Rate: 0.0010, Valid: 100.00%, Test: 69.84%
+---
+Training Time Per Epoch:  3.7453 s
+---
+Hits@20
+Run: 01, Epoch: 205, Loss: 633.6675, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.33%
+Hits@50
+Run: 01, Epoch: 205, Loss: 633.6675, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.11%
+Hits@100
+Run: 01, Epoch: 205, Loss: 633.6675, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.18%
+---
+Training Time Per Epoch:  3.7418 s
+---
+Hits@20
+Run: 01, Epoch: 210, Loss: 633.8461, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.75%
+Hits@50
+Run: 01, Epoch: 210, Loss: 633.8461, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.16%
+Hits@100
+Run: 01, Epoch: 210, Loss: 633.8461, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.07%
+---
+Training Time Per Epoch:  3.7416 s
+---
+Hits@20
+Run: 01, Epoch: 215, Loss: 618.7518, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.43%
+Hits@50
+Run: 01, Epoch: 215, Loss: 618.7518, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.54%
+Hits@100
+Run: 01, Epoch: 215, Loss: 618.7518, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.20%
+---
+Training Time Per Epoch:  3.7440 s
+---
+Hits@20
+Run: 01, Epoch: 220, Loss: 612.8923, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.81%
+Hits@50
+Run: 01, Epoch: 220, Loss: 612.8923, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.68%
+Hits@100
+Run: 01, Epoch: 220, Loss: 612.8923, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.14%
+---
+Training Time Per Epoch:  3.7441 s
+---
+Hits@20
+Run: 01, Epoch: 225, Loss: 612.3246, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.88%
+Hits@50
+Run: 01, Epoch: 225, Loss: 612.3246, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.82%
+Hits@100
+Run: 01, Epoch: 225, Loss: 612.3246, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.36%
+---
+Training Time Per Epoch:  3.7447 s
+---
+Hits@20
+Run: 01, Epoch: 230, Loss: 600.6960, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.78%
+Hits@50
+Run: 01, Epoch: 230, Loss: 600.6960, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.68%
+Hits@100
+Run: 01, Epoch: 230, Loss: 600.6960, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.37%
+---
+Training Time Per Epoch:  3.7416 s
+---
+Hits@20
+Run: 01, Epoch: 235, Loss: 585.9689, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.53%
+Hits@50
+Run: 01, Epoch: 235, Loss: 585.9689, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.35%
+Hits@100
+Run: 01, Epoch: 235, Loss: 585.9689, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.05%
+---
+Training Time Per Epoch:  3.7451 s
+---
+Hits@20
+Run: 01, Epoch: 240, Loss: 584.0426, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.67%
+Hits@50
+Run: 01, Epoch: 240, Loss: 584.0426, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.97%
+Hits@100
+Run: 01, Epoch: 240, Loss: 584.0426, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.63%
+---
+Training Time Per Epoch:  3.7419 s
+---
+Hits@20
+Run: 01, Epoch: 245, Loss: 576.7513, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.71%
+Hits@50
+Run: 01, Epoch: 245, Loss: 576.7513, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.68%
+Hits@100
+Run: 01, Epoch: 245, Loss: 576.7513, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.83%
+---
+Training Time Per Epoch:  3.7421 s
+---
+Hits@20
+Run: 01, Epoch: 250, Loss: 570.0264, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.47%
+Hits@50
+Run: 01, Epoch: 250, Loss: 570.0264, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.00%
+Hits@100
+Run: 01, Epoch: 250, Loss: 570.0264, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.79%
+---
+Training Time Per Epoch:  3.7424 s
+---
+Hits@20
+Run: 01, Epoch: 255, Loss: 573.5972, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.67%
+Hits@50
+Run: 01, Epoch: 255, Loss: 573.5972, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.98%
+Hits@100
+Run: 01, Epoch: 255, Loss: 573.5972, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.48%
+---
+Training Time Per Epoch:  3.7435 s
+---
+Hits@20
+Run: 01, Epoch: 260, Loss: 554.0319, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.35%
+Hits@50
+Run: 01, Epoch: 260, Loss: 554.0319, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.80%
+Hits@100
+Run: 01, Epoch: 260, Loss: 554.0319, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.47%
+---
+Training Time Per Epoch:  3.7450 s
+---
+Hits@20
+Run: 01, Epoch: 265, Loss: 558.3952, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.90%
+Hits@50
+Run: 01, Epoch: 265, Loss: 558.3952, Learning Rate: 0.0010, Valid: 100.00%, Test: 65.76%
+Hits@100
+Run: 01, Epoch: 265, Loss: 558.3952, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.61%
+---
+Training Time Per Epoch:  3.7430 s
+---
+Hits@20
+Run: 01, Epoch: 270, Loss: 553.7456, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.36%
+Hits@50
+Run: 01, Epoch: 270, Loss: 553.7456, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.48%
+Hits@100
+Run: 01, Epoch: 270, Loss: 553.7456, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.42%
+---
+Training Time Per Epoch:  3.7408 s
+---
+Hits@20
+Run: 01, Epoch: 275, Loss: 541.3826, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.76%
+Hits@50
+Run: 01, Epoch: 275, Loss: 541.3826, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.11%
+Hits@100
+Run: 01, Epoch: 275, Loss: 541.3826, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.43%
+---
+Training Time Per Epoch:  3.7377 s
+---
+Hits@20
+Run: 01, Epoch: 280, Loss: 555.1017, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.08%
+Hits@50
+Run: 01, Epoch: 280, Loss: 555.1017, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.27%
+Hits@100
+Run: 01, Epoch: 280, Loss: 555.1017, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.58%
+---
+Training Time Per Epoch:  3.7462 s
+---
+Hits@20
+Run: 01, Epoch: 285, Loss: 543.3737, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.21%
+Hits@50
+Run: 01, Epoch: 285, Loss: 543.3737, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.70%
+Hits@100
+Run: 01, Epoch: 285, Loss: 543.3737, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.45%
+---
+Training Time Per Epoch:  3.7423 s
+---
+Hits@20
+Run: 01, Epoch: 290, Loss: 533.1276, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.60%
+Hits@50
+Run: 01, Epoch: 290, Loss: 533.1276, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.50%
+Hits@100
+Run: 01, Epoch: 290, Loss: 533.1276, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.74%
+---
+Training Time Per Epoch:  3.7418 s
+---
+Hits@20
+Run: 01, Epoch: 295, Loss: 527.8202, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.31%
+Hits@50
+Run: 01, Epoch: 295, Loss: 527.8202, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.15%
+Hits@100
+Run: 01, Epoch: 295, Loss: 527.8202, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.99%
+---
+Training Time Per Epoch:  3.7433 s
+---
+Hits@20
+Run: 01, Epoch: 300, Loss: 517.7516, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.91%
+Hits@50
+Run: 01, Epoch: 300, Loss: 517.7516, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.47%
+Hits@100
+Run: 01, Epoch: 300, Loss: 517.7516, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.98%
+---
+Training Time Per Epoch:  3.7398 s
+---
+Hits@20
+Run: 01, Epoch: 305, Loss: 517.6134, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.54%
+Hits@50
+Run: 01, Epoch: 305, Loss: 517.6134, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.45%
+Hits@100
+Run: 01, Epoch: 305, Loss: 517.6134, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.61%
+---
+Training Time Per Epoch:  3.7406 s
+---
+Hits@20
+Run: 01, Epoch: 310, Loss: 518.3748, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.43%
+Hits@50
+Run: 01, Epoch: 310, Loss: 518.3748, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.26%
+Hits@100
+Run: 01, Epoch: 310, Loss: 518.3748, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.69%
+---
+Training Time Per Epoch:  3.7402 s
+---
+Hits@20
+Run: 01, Epoch: 315, Loss: 530.1319, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.82%
+Hits@50
+Run: 01, Epoch: 315, Loss: 530.1319, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.58%
+Hits@100
+Run: 01, Epoch: 315, Loss: 530.1319, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.47%
+---
+Training Time Per Epoch:  3.7406 s
+---
+Hits@20
+Run: 01, Epoch: 320, Loss: 521.5237, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.19%
+Hits@50
+Run: 01, Epoch: 320, Loss: 521.5237, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.39%
+Hits@100
+Run: 01, Epoch: 320, Loss: 521.5237, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.59%
+---
+Training Time Per Epoch:  3.7387 s
+---
+Hits@20
+Run: 01, Epoch: 325, Loss: 503.3309, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.52%
+Hits@50
+Run: 01, Epoch: 325, Loss: 503.3309, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.20%
+Hits@100
+Run: 01, Epoch: 325, Loss: 503.3309, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.44%
+---
+Training Time Per Epoch:  3.7392 s
+---
+Hits@20
+Run: 01, Epoch: 330, Loss: 501.9071, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.80%
+Hits@50
+Run: 01, Epoch: 330, Loss: 501.9071, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.56%
+Hits@100
+Run: 01, Epoch: 330, Loss: 501.9071, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.29%
+---
+Training Time Per Epoch:  3.7408 s
+---
+Hits@20
+Run: 01, Epoch: 335, Loss: 499.1763, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.58%
+Hits@50
+Run: 01, Epoch: 335, Loss: 499.1763, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.84%
+Hits@100
+Run: 01, Epoch: 335, Loss: 499.1763, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.30%
+---
+Training Time Per Epoch:  3.7365 s
+---
+Hits@20
+Run: 01, Epoch: 340, Loss: 506.4462, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.79%
+Hits@50
+Run: 01, Epoch: 340, Loss: 506.4462, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.65%
+Hits@100
+Run: 01, Epoch: 340, Loss: 506.4462, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.53%
+---
+Training Time Per Epoch:  3.7429 s
+---
+Hits@20
+Run: 01, Epoch: 345, Loss: 497.6012, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.77%
+Hits@50
+Run: 01, Epoch: 345, Loss: 497.6012, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.93%
+Hits@100
+Run: 01, Epoch: 345, Loss: 497.6012, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.01%
+---
+Training Time Per Epoch:  3.7410 s
+---
+Hits@20
+Run: 01, Epoch: 350, Loss: 485.8749, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.39%
+Hits@50
+Run: 01, Epoch: 350, Loss: 485.8749, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.41%
+Hits@100
+Run: 01, Epoch: 350, Loss: 485.8749, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.78%
+---
+Training Time Per Epoch:  3.7433 s
+---
+Hits@20
+Run: 01, Epoch: 355, Loss: 483.8859, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.73%
+Hits@50
+Run: 01, Epoch: 355, Loss: 483.8859, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.87%
+Hits@100
+Run: 01, Epoch: 355, Loss: 483.8859, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.69%
+---
+Training Time Per Epoch:  3.7414 s
+---
+Hits@20
+Run: 01, Epoch: 360, Loss: 488.2023, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.62%
+Hits@50
+Run: 01, Epoch: 360, Loss: 488.2023, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.94%
+Hits@100
+Run: 01, Epoch: 360, Loss: 488.2023, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.16%
+---
+Training Time Per Epoch:  3.7392 s
+---
+Hits@20
+Run: 01, Epoch: 365, Loss: 486.7141, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.66%
+Hits@50
+Run: 01, Epoch: 365, Loss: 486.7141, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.25%
+Hits@100
+Run: 01, Epoch: 365, Loss: 486.7141, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.48%
+---
+Training Time Per Epoch:  3.7424 s
+---
+Hits@20
+Run: 01, Epoch: 370, Loss: 477.3317, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.79%
+Hits@50
+Run: 01, Epoch: 370, Loss: 477.3317, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.30%
+Hits@100
+Run: 01, Epoch: 370, Loss: 477.3317, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.81%
+---
+Training Time Per Epoch:  3.7419 s
+---
+Hits@20
+Run: 01, Epoch: 375, Loss: 472.9345, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.53%
+Hits@50
+Run: 01, Epoch: 375, Loss: 472.9345, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.27%
+Hits@100
+Run: 01, Epoch: 375, Loss: 472.9345, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.93%
+---
+Training Time Per Epoch:  3.7391 s
+---
+Hits@20
+Run: 01, Epoch: 380, Loss: 477.2973, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.06%
+Hits@50
+Run: 01, Epoch: 380, Loss: 477.2973, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.69%
+Hits@100
+Run: 01, Epoch: 380, Loss: 477.2973, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.04%
+---
+Training Time Per Epoch:  3.7394 s
+---
+Hits@20
+Run: 01, Epoch: 385, Loss: 471.8911, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.93%
+Hits@50
+Run: 01, Epoch: 385, Loss: 471.8911, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.41%
+Hits@100
+Run: 01, Epoch: 385, Loss: 471.8911, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.21%
+---
+Training Time Per Epoch:  3.7362 s
+---
+Hits@20
+Run: 01, Epoch: 390, Loss: 465.9111, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.08%
+Hits@50
+Run: 01, Epoch: 390, Loss: 465.9111, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.92%
+Hits@100
+Run: 01, Epoch: 390, Loss: 465.9111, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.84%
+---
+Training Time Per Epoch:  3.7439 s
+---
+Hits@20
+Run: 01, Epoch: 395, Loss: 460.3973, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.62%
+Hits@50
+Run: 01, Epoch: 395, Loss: 460.3973, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.15%
+Hits@100
+Run: 01, Epoch: 395, Loss: 460.3973, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.09%
+---
+Training Time Per Epoch:  3.7393 s
+---
+Hits@20
+Run: 01, Epoch: 400, Loss: 454.3826, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.48%
+Hits@50
+Run: 01, Epoch: 400, Loss: 454.3826, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.60%
+Hits@100
+Run: 01, Epoch: 400, Loss: 454.3826, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.97%
+---
+Training Time Per Epoch:  3.7448 s
+---
+Hits@20
+Run: 01, Epoch: 405, Loss: 452.6136, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.16%
+Hits@50
+Run: 01, Epoch: 405, Loss: 452.6136, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.05%
+Hits@100
+Run: 01, Epoch: 405, Loss: 452.6136, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.76%
+---
+Training Time Per Epoch:  3.7384 s
+---
+Hits@20
+Run: 01, Epoch: 410, Loss: 452.5372, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.87%
+Hits@50
+Run: 01, Epoch: 410, Loss: 452.5372, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.23%
+Hits@100
+Run: 01, Epoch: 410, Loss: 452.5372, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.96%
+---
+Training Time Per Epoch:  3.7410 s
+---
+Hits@20
+Run: 01, Epoch: 415, Loss: 450.2549, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.75%
+Hits@50
+Run: 01, Epoch: 415, Loss: 450.2549, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.82%
+Hits@100
+Run: 01, Epoch: 415, Loss: 450.2549, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.29%
+---
+Training Time Per Epoch:  3.7388 s
+---
+Hits@20
+Run: 01, Epoch: 420, Loss: 447.1642, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.42%
+Hits@50
+Run: 01, Epoch: 420, Loss: 447.1642, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.37%
+Hits@100
+Run: 01, Epoch: 420, Loss: 447.1642, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.82%
+---
+Training Time Per Epoch:  3.7418 s
+---
+Hits@20
+Run: 01, Epoch: 425, Loss: 454.4757, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.66%
+Hits@50
+Run: 01, Epoch: 425, Loss: 454.4757, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.71%
+Hits@100
+Run: 01, Epoch: 425, Loss: 454.4757, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.74%
+---
+Training Time Per Epoch:  3.7395 s
+---
+Hits@20
+Run: 01, Epoch: 430, Loss: 454.7618, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.41%
+Hits@50
+Run: 01, Epoch: 430, Loss: 454.7618, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.12%
+Hits@100
+Run: 01, Epoch: 430, Loss: 454.7618, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.82%
+---
+Training Time Per Epoch:  3.7396 s
+---
+Hits@20
+Run: 01, Epoch: 435, Loss: 446.9138, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.21%
+Hits@50
+Run: 01, Epoch: 435, Loss: 446.9138, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.66%
+Hits@100
+Run: 01, Epoch: 435, Loss: 446.9138, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.80%
+---
+Training Time Per Epoch:  3.7376 s
+---
+Hits@20
+Run: 01, Epoch: 440, Loss: 439.2530, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.76%
+Hits@50
+Run: 01, Epoch: 440, Loss: 439.2530, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.19%
+Hits@100
+Run: 01, Epoch: 440, Loss: 439.2530, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.73%
+---
+Training Time Per Epoch:  3.7452 s
+---
+Hits@20
+Run: 01, Epoch: 445, Loss: 438.7778, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.68%
+Hits@50
+Run: 01, Epoch: 445, Loss: 438.7778, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.89%
+Hits@100
+Run: 01, Epoch: 445, Loss: 438.7778, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.72%
+---
+Training Time Per Epoch:  3.7372 s
+---
+Hits@20
+Run: 01, Epoch: 450, Loss: 445.2803, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.00%
+Hits@50
+Run: 01, Epoch: 450, Loss: 445.2803, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.09%
+Hits@100
+Run: 01, Epoch: 450, Loss: 445.2803, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.06%
+---
+Training Time Per Epoch:  3.7439 s
+---
+Hits@20
+Run: 01, Epoch: 455, Loss: 435.8479, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.11%
+Hits@50
+Run: 01, Epoch: 455, Loss: 435.8479, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.34%
+Hits@100
+Run: 01, Epoch: 455, Loss: 435.8479, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.93%
+---
+Training Time Per Epoch:  3.7381 s
+---
+Hits@20
+Run: 01, Epoch: 460, Loss: 429.5823, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.02%
+Hits@50
+Run: 01, Epoch: 460, Loss: 429.5823, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.40%
+Hits@100
+Run: 01, Epoch: 460, Loss: 429.5823, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.30%
+---
+Training Time Per Epoch:  3.7429 s
+---
+Hits@20
+Run: 01, Epoch: 465, Loss: 431.8674, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.73%
+Hits@50
+Run: 01, Epoch: 465, Loss: 431.8674, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.20%
+Hits@100
+Run: 01, Epoch: 465, Loss: 431.8674, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.96%
+---
+Training Time Per Epoch:  3.7411 s
+---
+Hits@20
+Run: 01, Epoch: 470, Loss: 435.8871, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.87%
+Hits@50
+Run: 01, Epoch: 470, Loss: 435.8871, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.40%
+Hits@100
+Run: 01, Epoch: 470, Loss: 435.8871, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.09%
+---
+Training Time Per Epoch:  3.7404 s
+---
+Hits@20
+Run: 01, Epoch: 475, Loss: 424.6836, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.18%
+Hits@50
+Run: 01, Epoch: 475, Loss: 424.6836, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.30%
+Hits@100
+Run: 01, Epoch: 475, Loss: 424.6836, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.23%
+---
+Training Time Per Epoch:  3.7378 s
+---
+Hits@20
+Run: 01, Epoch: 480, Loss: 438.2645, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.48%
+Hits@50
+Run: 01, Epoch: 480, Loss: 438.2645, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.20%
+Hits@100
+Run: 01, Epoch: 480, Loss: 438.2645, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.24%
+---
+Training Time Per Epoch:  3.7421 s
+---
+Hits@20
+Run: 01, Epoch: 485, Loss: 423.7212, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.95%
+Hits@50
+Run: 01, Epoch: 485, Loss: 423.7212, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.14%
+Hits@100
+Run: 01, Epoch: 485, Loss: 423.7212, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.28%
+---
+Training Time Per Epoch:  3.7400 s
+---
+Hits@20
+Run: 01, Epoch: 490, Loss: 419.8344, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.68%
+Hits@50
+Run: 01, Epoch: 490, Loss: 419.8344, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.82%
+Hits@100
+Run: 01, Epoch: 490, Loss: 419.8344, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.77%
+---
+Training Time Per Epoch:  3.7417 s
+---
+Hits@20
+Run: 01, Epoch: 495, Loss: 417.0119, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.22%
+Hits@50
+Run: 01, Epoch: 495, Loss: 417.0119, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.05%
+Hits@100
+Run: 01, Epoch: 495, Loss: 417.0119, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.24%
+---
+Training Time Per Epoch:  3.7370 s
+---
+Hits@20
+Run: 01, Epoch: 500, Loss: 415.7615, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.18%
+Hits@50
+Run: 01, Epoch: 500, Loss: 415.7615, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.71%
+Hits@100
+Run: 01, Epoch: 500, Loss: 415.7615, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.39%
+---
+Training Time Per Epoch:  3.7427 s
+---
+Hits@20
+Run: 01, Epoch: 505, Loss: 413.9027, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.90%
+Hits@50
+Run: 01, Epoch: 505, Loss: 413.9027, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.59%
+Hits@100
+Run: 01, Epoch: 505, Loss: 413.9027, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.08%
+---
+Training Time Per Epoch:  3.7404 s
+---
+Hits@20
+Run: 01, Epoch: 510, Loss: 419.4519, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.99%
+Hits@50
+Run: 01, Epoch: 510, Loss: 419.4519, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.60%
+Hits@100
+Run: 01, Epoch: 510, Loss: 419.4519, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.15%
+---
+Training Time Per Epoch:  3.7411 s
+---
+Hits@20
+Run: 01, Epoch: 515, Loss: 429.2714, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.38%
+Hits@50
+Run: 01, Epoch: 515, Loss: 429.2714, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.12%
+Hits@100
+Run: 01, Epoch: 515, Loss: 429.2714, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.91%
+---
+Training Time Per Epoch:  3.7401 s
+---
+Hits@20
+Run: 01, Epoch: 520, Loss: 413.1687, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.13%
+Hits@50
+Run: 01, Epoch: 520, Loss: 413.1687, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.30%
+Hits@100
+Run: 01, Epoch: 520, Loss: 413.1687, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.19%
+---
+Training Time Per Epoch:  3.7358 s
+---
+Hits@20
+Run: 01, Epoch: 525, Loss: 417.1284, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.66%
+Hits@50
+Run: 01, Epoch: 525, Loss: 417.1284, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.34%
+Hits@100
+Run: 01, Epoch: 525, Loss: 417.1284, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.08%
+---
+Training Time Per Epoch:  3.7362 s
+---
+Hits@20
+Run: 01, Epoch: 530, Loss: 422.3120, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.42%
+Hits@50
+Run: 01, Epoch: 530, Loss: 422.3120, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.50%
+Hits@100
+Run: 01, Epoch: 530, Loss: 422.3120, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.26%
+---
+Training Time Per Epoch:  3.7351 s
+---
+Hits@20
+Run: 01, Epoch: 535, Loss: 420.3840, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.09%
+Hits@50
+Run: 01, Epoch: 535, Loss: 420.3840, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.31%
+Hits@100
+Run: 01, Epoch: 535, Loss: 420.3840, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.04%
+---
+Training Time Per Epoch:  3.7390 s
+---
+Hits@20
+Run: 01, Epoch: 540, Loss: 412.6178, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.39%
+Hits@50
+Run: 01, Epoch: 540, Loss: 412.6178, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.10%
+Hits@100
+Run: 01, Epoch: 540, Loss: 412.6178, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.37%
+---
+Training Time Per Epoch:  3.7408 s
+---
+Hits@20
+Run: 01, Epoch: 545, Loss: 418.2101, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.44%
+Hits@50
+Run: 01, Epoch: 545, Loss: 418.2101, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.52%
+Hits@100
+Run: 01, Epoch: 545, Loss: 418.2101, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.50%
+---
+Training Time Per Epoch:  3.7425 s
+---
+Hits@20
+Run: 01, Epoch: 550, Loss: 406.2412, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.26%
+Hits@50
+Run: 01, Epoch: 550, Loss: 406.2412, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.29%
+Hits@100
+Run: 01, Epoch: 550, Loss: 406.2412, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.30%
+---
+Training Time Per Epoch:  3.7419 s
+---
+Hits@20
+Run: 01, Epoch: 555, Loss: 405.9096, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.95%
+Hits@50
+Run: 01, Epoch: 555, Loss: 405.9096, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.02%
+Hits@100
+Run: 01, Epoch: 555, Loss: 405.9096, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.10%
+---
+Training Time Per Epoch:  3.7418 s
+---
+Hits@20
+Run: 01, Epoch: 560, Loss: 410.8645, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.63%
+Hits@50
+Run: 01, Epoch: 560, Loss: 410.8645, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.62%
+Hits@100
+Run: 01, Epoch: 560, Loss: 410.8645, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.41%
+---
+Training Time Per Epoch:  3.7412 s
+---
+Hits@20
+Run: 01, Epoch: 565, Loss: 400.9248, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.21%
+Hits@50
+Run: 01, Epoch: 565, Loss: 400.9248, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.24%
+Hits@100
+Run: 01, Epoch: 565, Loss: 400.9248, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.58%
+---
+Training Time Per Epoch:  3.7393 s
+---
+Hits@20
+Run: 01, Epoch: 570, Loss: 421.1806, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.04%
+Hits@50
+Run: 01, Epoch: 570, Loss: 421.1806, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.00%
+Hits@100
+Run: 01, Epoch: 570, Loss: 421.1806, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.29%
+---
+Training Time Per Epoch:  3.7415 s
+---
+Hits@20
+Run: 01, Epoch: 575, Loss: 397.4417, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.14%
+Hits@50
+Run: 01, Epoch: 575, Loss: 397.4417, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.52%
+Hits@100
+Run: 01, Epoch: 575, Loss: 397.4417, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.11%
+---
+Training Time Per Epoch:  3.7387 s
+---
+Hits@20
+Run: 01, Epoch: 580, Loss: 394.5579, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.86%
+Hits@50
+Run: 01, Epoch: 580, Loss: 394.5579, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.22%
+Hits@100
+Run: 01, Epoch: 580, Loss: 394.5579, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.99%
+---
+Training Time Per Epoch:  3.7396 s
+---
+Hits@20
+Run: 01, Epoch: 585, Loss: 393.2442, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.71%
+Hits@50
+Run: 01, Epoch: 585, Loss: 393.2442, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.25%
+Hits@100
+Run: 01, Epoch: 585, Loss: 393.2442, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.00%
+---
+Training Time Per Epoch:  3.7426 s
+---
+Hits@20
+Run: 01, Epoch: 590, Loss: 390.0945, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.50%
+Hits@50
+Run: 01, Epoch: 590, Loss: 390.0945, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.22%
+Hits@100
+Run: 01, Epoch: 590, Loss: 390.0945, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.98%
+---
+Training Time Per Epoch:  3.7414 s
+---
+Hits@20
+Run: 01, Epoch: 595, Loss: 422.4520, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.20%
+Hits@50
+Run: 01, Epoch: 595, Loss: 422.4520, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.09%
+Hits@100
+Run: 01, Epoch: 595, Loss: 422.4520, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.88%
+---
+Training Time Per Epoch:  3.7400 s
+---
+Hits@20
+Run: 01, Epoch: 600, Loss: 412.9985, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.53%
+Hits@50
+Run: 01, Epoch: 600, Loss: 412.9985, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.37%
+Hits@100
+Run: 01, Epoch: 600, Loss: 412.9985, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.17%
+---
+Training Time Per Epoch:  3.7385 s
+---
+Hits@20
+Run: 01, Epoch: 605, Loss: 401.7555, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.25%
+Hits@50
+Run: 01, Epoch: 605, Loss: 401.7555, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.13%
+Hits@100
+Run: 01, Epoch: 605, Loss: 401.7555, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.90%
+---
+Training Time Per Epoch:  3.7358 s
+---
+Hits@20
+Run: 01, Epoch: 610, Loss: 389.6074, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.91%
+Hits@50
+Run: 01, Epoch: 610, Loss: 389.6074, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.44%
+Hits@100
+Run: 01, Epoch: 610, Loss: 389.6074, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.14%
+---
+Training Time Per Epoch:  3.7398 s
+---
+Hits@20
+Run: 01, Epoch: 615, Loss: 392.0055, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.56%
+Hits@50
+Run: 01, Epoch: 615, Loss: 392.0055, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.01%
+Hits@100
+Run: 01, Epoch: 615, Loss: 392.0055, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.99%
+---
+Training Time Per Epoch:  3.7352 s
+---
+Hits@20
+Run: 01, Epoch: 620, Loss: 411.4721, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.44%
+Hits@50
+Run: 01, Epoch: 620, Loss: 411.4721, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.32%
+Hits@100
+Run: 01, Epoch: 620, Loss: 411.4721, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.03%
+---
+Training Time Per Epoch:  3.7377 s
+---
+Hits@20
+Run: 01, Epoch: 625, Loss: 403.1332, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.50%
+Hits@50
+Run: 01, Epoch: 625, Loss: 403.1332, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.56%
+Hits@100
+Run: 01, Epoch: 625, Loss: 403.1332, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.15%
+---
+Training Time Per Epoch:  3.7419 s
+---
+Hits@20
+Run: 01, Epoch: 630, Loss: 404.9184, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.33%
+Hits@50
+Run: 01, Epoch: 630, Loss: 404.9184, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.32%
+Hits@100
+Run: 01, Epoch: 630, Loss: 404.9184, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.84%
+---
+Training Time Per Epoch:  3.7392 s
+---
+Hits@20
+Run: 01, Epoch: 635, Loss: 391.4038, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.70%
+Hits@50
+Run: 01, Epoch: 635, Loss: 391.4038, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.45%
+Hits@100
+Run: 01, Epoch: 635, Loss: 391.4038, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.01%
+---
+Training Time Per Epoch:  3.7374 s
+---
+Hits@20
+Run: 01, Epoch: 640, Loss: 390.3918, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.55%
+Hits@50
+Run: 01, Epoch: 640, Loss: 390.3918, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.11%
+Hits@100
+Run: 01, Epoch: 640, Loss: 390.3918, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.35%
+---
+Training Time Per Epoch:  3.7412 s
+---
+Hits@20
+Run: 01, Epoch: 645, Loss: 400.5863, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.20%
+Hits@50
+Run: 01, Epoch: 645, Loss: 400.5863, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.09%
+Hits@100
+Run: 01, Epoch: 645, Loss: 400.5863, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.17%
+---
+Training Time Per Epoch:  3.7367 s
+---
+Hits@20
+Run: 01, Epoch: 650, Loss: 381.4564, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.57%
+Hits@50
+Run: 01, Epoch: 650, Loss: 381.4564, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.21%
+Hits@100
+Run: 01, Epoch: 650, Loss: 381.4564, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.05%
+---
+Training Time Per Epoch:  3.7409 s
+---
+Hits@20
+Run: 01, Epoch: 655, Loss: 378.5686, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.59%
+Hits@50
+Run: 01, Epoch: 655, Loss: 378.5686, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.58%
+Hits@100
+Run: 01, Epoch: 655, Loss: 378.5686, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.91%
+---
+Training Time Per Epoch:  3.7361 s
+---
+Hits@20
+Run: 01, Epoch: 660, Loss: 376.1439, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.70%
+Hits@50
+Run: 01, Epoch: 660, Loss: 376.1439, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.21%
+Hits@100
+Run: 01, Epoch: 660, Loss: 376.1439, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.97%
+---
+Training Time Per Epoch:  3.7353 s
+---
+Hits@20
+Run: 01, Epoch: 665, Loss: 374.3651, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.63%
+Hits@50
+Run: 01, Epoch: 665, Loss: 374.3651, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.15%
+Hits@100
+Run: 01, Epoch: 665, Loss: 374.3651, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.23%
+---
+Training Time Per Epoch:  3.7352 s
+---
+Hits@20
+Run: 01, Epoch: 670, Loss: 374.7163, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.59%
+Hits@50
+Run: 01, Epoch: 670, Loss: 374.7163, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.09%
+Hits@100
+Run: 01, Epoch: 670, Loss: 374.7163, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.90%
+---
+Training Time Per Epoch:  3.7374 s
+---
+Hits@20
+Run: 01, Epoch: 675, Loss: 373.3291, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.13%
+Hits@50
+Run: 01, Epoch: 675, Loss: 373.3291, Learning Rate: 0.0010, Valid: 100.00%, Test: 66.88%
+Hits@100
+Run: 01, Epoch: 675, Loss: 373.3291, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.78%
+---
+Training Time Per Epoch:  3.7307 s
+---
+Hits@20
+Run: 01, Epoch: 680, Loss: 371.4124, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.68%
+Hits@50
+Run: 01, Epoch: 680, Loss: 371.4124, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.37%
+Hits@100
+Run: 01, Epoch: 680, Loss: 371.4124, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.87%
+---
+Training Time Per Epoch:  3.7375 s
+---
+Hits@20
+Run: 01, Epoch: 685, Loss: 372.3452, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.85%
+Hits@50
+Run: 01, Epoch: 685, Loss: 372.3452, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.16%
+Hits@100
+Run: 01, Epoch: 685, Loss: 372.3452, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.97%
+---
+Training Time Per Epoch:  3.7306 s
+---
+Hits@20
+Run: 01, Epoch: 690, Loss: 375.3798, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.10%
+Hits@50
+Run: 01, Epoch: 690, Loss: 375.3798, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.18%
+Hits@100
+Run: 01, Epoch: 690, Loss: 375.3798, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.01%
+---
+Training Time Per Epoch:  3.7336 s
+---
+Hits@20
+Run: 01, Epoch: 695, Loss: 373.1355, Learning Rate: 0.0010, Valid: 100.00%, Test: 61.05%
+Hits@50
+Run: 01, Epoch: 695, Loss: 373.1355, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.44%
+Hits@100
+Run: 01, Epoch: 695, Loss: 373.1355, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.96%
+---
+Training Time Per Epoch:  3.7329 s
+---
+Hits@20
+Run: 01, Epoch: 700, Loss: 370.6104, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.78%
+Hits@50
+Run: 01, Epoch: 700, Loss: 370.6104, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.44%
+Hits@100
+Run: 01, Epoch: 700, Loss: 370.6104, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.19%
+---
+Training Time Per Epoch:  3.7335 s
+---
+Hits@20
+Run: 01, Epoch: 705, Loss: 370.4163, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.25%
+Hits@50
+Run: 01, Epoch: 705, Loss: 370.4163, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.26%
+Hits@100
+Run: 01, Epoch: 705, Loss: 370.4163, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.13%
+---
+Training Time Per Epoch:  3.7311 s
+---
+Hits@20
+Run: 01, Epoch: 710, Loss: 369.9870, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.50%
+Hits@50
+Run: 01, Epoch: 710, Loss: 369.9870, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.51%
+Hits@100
+Run: 01, Epoch: 710, Loss: 369.9870, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.05%
+---
+Training Time Per Epoch:  3.7329 s
+---
+Hits@20
+Run: 01, Epoch: 715, Loss: 371.9529, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.80%
+Hits@50
+Run: 01, Epoch: 715, Loss: 371.9529, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.56%
+Hits@100
+Run: 01, Epoch: 715, Loss: 371.9529, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.24%
+---
+Training Time Per Epoch:  3.7319 s
+---
+Hits@20
+Run: 01, Epoch: 720, Loss: 369.4232, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.82%
+Hits@50
+Run: 01, Epoch: 720, Loss: 369.4232, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.37%
+Hits@100
+Run: 01, Epoch: 720, Loss: 369.4232, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.01%
+---
+Training Time Per Epoch:  3.7361 s
+---
+Hits@20
+Run: 01, Epoch: 725, Loss: 377.3163, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.13%
+Hits@50
+Run: 01, Epoch: 725, Loss: 377.3163, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.75%
+Hits@100
+Run: 01, Epoch: 725, Loss: 377.3163, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.03%
+---
+Training Time Per Epoch:  3.7299 s
+---
+Hits@20
+Run: 01, Epoch: 730, Loss: 375.1087, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.87%
+Hits@50
+Run: 01, Epoch: 730, Loss: 375.1087, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.59%
+Hits@100
+Run: 01, Epoch: 730, Loss: 375.1087, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.02%
+---
+Training Time Per Epoch:  3.7410 s
+---
+Hits@20
+Run: 01, Epoch: 735, Loss: 375.3175, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.24%
+Hits@50
+Run: 01, Epoch: 735, Loss: 375.3175, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.35%
+Hits@100
+Run: 01, Epoch: 735, Loss: 375.3175, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.84%
+---
+Training Time Per Epoch:  3.7356 s
+---
+Hits@20
+Run: 01, Epoch: 740, Loss: 372.5998, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.92%
+Hits@50
+Run: 01, Epoch: 740, Loss: 372.5998, Learning Rate: 0.0010, Valid: 100.00%, Test: 68.06%
+Hits@100
+Run: 01, Epoch: 740, Loss: 372.5998, Learning Rate: 0.0010, Valid: 100.00%, Test: 70.97%
+---
+Training Time Per Epoch:  3.7359 s
+---
+Hits@20
+Run: 01, Epoch: 745, Loss: 367.9298, Learning Rate: 0.0010, Valid: 100.00%, Test: 60.03%
+Hits@50
+Run: 01, Epoch: 745, Loss: 367.9298, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.52%
+Hits@100
+Run: 01, Epoch: 745, Loss: 367.9298, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.24%
+---
+Training Time Per Epoch:  3.7350 s
+---
+Hits@20
+Run: 01, Epoch: 750, Loss: 361.9302, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.56%
+Hits@50
+Run: 01, Epoch: 750, Loss: 361.9302, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.59%
+Hits@100
+Run: 01, Epoch: 750, Loss: 361.9302, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.06%
+---
+Training Time Per Epoch:  3.7393 s
+---
+Hits@20
+Run: 01, Epoch: 755, Loss: 361.5292, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.65%
+Hits@50
+Run: 01, Epoch: 755, Loss: 361.5292, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.66%
+Hits@100
+Run: 01, Epoch: 755, Loss: 361.5292, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.10%
+---
+Training Time Per Epoch:  3.7419 s
+---
+Hits@20
+Run: 01, Epoch: 760, Loss: 371.1129, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.88%
+Hits@50
+Run: 01, Epoch: 760, Loss: 371.1129, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.64%
+Hits@100
+Run: 01, Epoch: 760, Loss: 371.1129, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.10%
+---
+Training Time Per Epoch:  3.7416 s
+---
+Hits@20
+Run: 01, Epoch: 765, Loss: 373.0705, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.81%
+Hits@50
+Run: 01, Epoch: 765, Loss: 373.0705, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.66%
+Hits@100
+Run: 01, Epoch: 765, Loss: 373.0705, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.45%
+---
+Training Time Per Epoch:  3.7424 s
+---
+Hits@20
+Run: 01, Epoch: 770, Loss: 361.0945, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.57%
+Hits@50
+Run: 01, Epoch: 770, Loss: 361.0945, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.80%
+Hits@100
+Run: 01, Epoch: 770, Loss: 361.0945, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.07%
+---
+Training Time Per Epoch:  3.7391 s
+---
+Hits@20
+Run: 01, Epoch: 775, Loss: 359.2903, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.31%
+Hits@50
+Run: 01, Epoch: 775, Loss: 359.2903, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.59%
+Hits@100
+Run: 01, Epoch: 775, Loss: 359.2903, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.44%
+---
+Training Time Per Epoch:  3.7372 s
+---
+Hits@20
+Run: 01, Epoch: 780, Loss: 358.8051, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.30%
+Hits@50
+Run: 01, Epoch: 780, Loss: 358.8051, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.86%
+Hits@100
+Run: 01, Epoch: 780, Loss: 358.8051, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.17%
+---
+Training Time Per Epoch:  3.7368 s
+---
+Hits@20
+Run: 01, Epoch: 785, Loss: 358.7742, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.68%
+Hits@50
+Run: 01, Epoch: 785, Loss: 358.7742, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.76%
+Hits@100
+Run: 01, Epoch: 785, Loss: 358.7742, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.10%
+---
+Training Time Per Epoch:  3.7377 s
+---
+Hits@20
+Run: 01, Epoch: 790, Loss: 357.0687, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.84%
+Hits@50
+Run: 01, Epoch: 790, Loss: 357.0687, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.55%
+Hits@100
+Run: 01, Epoch: 790, Loss: 357.0687, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.17%
+---
+Training Time Per Epoch:  3.7410 s
+---
+Hits@20
+Run: 01, Epoch: 795, Loss: 358.2593, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.76%
+Hits@50
+Run: 01, Epoch: 795, Loss: 358.2593, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.61%
+Hits@100
+Run: 01, Epoch: 795, Loss: 358.2593, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.32%
+---
+Training Time Per Epoch:  3.7353 s
+---
+Hits@20
+Run: 01, Epoch: 800, Loss: 360.6933, Learning Rate: 0.0010, Valid: 100.00%, Test: 59.76%
+Hits@50
+Run: 01, Epoch: 800, Loss: 360.6933, Learning Rate: 0.0010, Valid: 100.00%, Test: 67.42%
+Hits@100
+Run: 01, Epoch: 800, Loss: 360.6933, Learning Rate: 0.0010, Valid: 100.00%, Test: 71.41%
+---
+Training Time Per Epoch:  3.7430 s
+---
+Hits@20
+160
+tensor([[ 15.3768,  13.1365],
+        [ 31.8487,  22.0855],
+        [ 42.6802,  27.8681],
+        [ 50.6308,  31.0324],
+        [ 65.4750,  39.4785],
+        [ 66.1574,  39.1936],
+        [ 78.1389,  45.5071],
+        [ 85.1674,  49.8996],
+        [ 91.9413,  52.7575],
+        [ 90.9776,  52.3797],
+        [ 91.8947,  52.4682],
+        [ 98.7917,  58.2011],
+        [ 98.8000,  57.8299],
+        [ 99.5307,  58.7321],
+        [ 99.7587,  59.3732],
+        [ 99.8269,  58.9695],
+        [ 99.8685,  58.7343],
+        [ 99.9318,  59.5394],
+        [ 99.9168,  58.8487],
+        [ 99.9684,  59.5243],
+        [ 99.9834,  59.8221],
+        [ 99.9584,  59.8524],
+        [ 99.9883,  59.8351],
+        [ 99.9883,  59.0775],
+        [ 99.9950,  60.4783],
+        [ 99.9950,  59.3818],
+        [ 99.9900,  59.4897],
+        [ 99.9950,  60.0099],
+        [ 99.9967,  59.2286],
+        [100.0000,  59.6322],
+        [ 99.9967,  59.6624],
+        [100.0000,  59.2264],
+        [100.0000,  59.2286],
+        [ 99.9950,  59.1034],
+        [100.0000,  59.9883],
+        [100.0000,  59.4358],
+        [100.0000,  59.7811],
+        [100.0000,  59.4185],
+        [100.0000,  59.6840],
+        [100.0000,  58.8033],
+        [100.0000,  59.3257],
+        [100.0000,  59.7488],
+        [100.0000,  60.4265],
+        [100.0000,  59.8092],
+        [100.0000,  59.8761],
+        [100.0000,  59.7790],
+        [100.0000,  59.5264],
+        [100.0000,  59.6711],
+        [100.0000,  59.7121],
+        [100.0000,  60.4654],
+        [100.0000,  60.6747],
+        [100.0000,  60.3531],
+        [100.0000,  60.8971],
+        [100.0000,  60.3553],
+        [100.0000,  60.7568],
+        [100.0000,  60.0833],
+        [100.0000,  60.2150],
+        [100.0000,  60.5970],
+        [100.0000,  60.3056],
+        [100.0000,  60.9143],
+        [100.0000,  60.5409],
+        [100.0000,  61.4280],
+        [100.0000,  60.8150],
+        [100.0000,  61.1928],
+        [100.0000,  60.5236],
+        [100.0000,  59.8006],
+        [100.0000,  60.5798],
+        [100.0000,  60.7891],
+        [100.0000,  60.7654],
+        [100.0000,  60.3920],
+        [100.0000,  60.7309],
+        [100.0000,  59.6171],
+        [100.0000,  60.6596],
+        [100.0000,  60.7935],
+        [100.0000,  60.5258],
+        [100.0000,  61.0590],
+        [100.0000,  60.9338],
+        [100.0000,  61.0762],
+        [100.0000,  60.6186],
+        [100.0000,  60.4805],
+        [100.0000,  61.1604],
+        [100.0000,  60.8690],
+        [100.0000,  60.7503],
+        [100.0000,  60.4244],
+        [100.0000,  60.6575],
+        [100.0000,  61.4129],
+        [100.0000,  61.2079],
+        [100.0000,  61.7605],
+        [100.0000,  60.6769],
+        [100.0000,  60.9985],
+        [100.0000,  61.1129],
+        [100.0000,  60.0164],
+        [100.0000,  59.7336],
+        [100.0000,  60.8690],
+        [100.0000,  61.1798],
+        [100.0000,  60.4805],
+        [100.0000,  59.9495],
+        [100.0000,  61.6806],
+        [100.0000,  59.2221],
+        [100.0000,  60.1805],
+        [100.0000,  59.8955],
+        [100.0000,  60.9899],
+        [100.0000,  61.3762],
+        [100.0000,  61.1259],
+        [100.0000,  60.6575],
+        [100.0000,  60.4244],
+        [100.0000,  61.0935],
+        [100.0000,  60.3941],
+        [100.0000,  61.4410],
+        [100.0000,  61.2575],
+        [100.0000,  60.9510],
+        [100.0000,  60.6337],
+        [100.0000,  61.2100],
+        [100.0000,  61.0374],
+        [100.0000,  61.1388],
+        [100.0000,  60.8625],
+        [100.0000,  60.7093],
+        [100.0000,  60.4956],
+        [100.0000,  60.1977],
+        [100.0000,  59.5286],
+        [100.0000,  60.2495],
+        [100.0000,  60.9143],
+        [100.0000,  60.5603],
+        [100.0000,  60.4438],
+        [100.0000,  60.5021],
+        [100.0000,  60.3272],
+        [100.0000,  60.6963],
+        [100.0000,  60.5495],
+        [100.0000,  60.2042],
+        [100.0000,  60.5690],
+        [100.0000,  60.5862],
+        [100.0000,  60.7006],
+        [100.0000,  60.6316],
+        [100.0000,  60.5949],
+        [100.0000,  61.1280],
+        [100.0000,  60.6769],
+        [100.0000,  60.8517],
+        [100.0000,  60.1006],
+        [100.0000,  61.0482],
+        [100.0000,  60.7805],
+        [100.0000,  60.2452],
+        [100.0000,  60.5021],
+        [100.0000,  60.7978],
+        [100.0000,  60.8215],
+        [100.0000,  60.1286],
+        [100.0000,  59.8696],
+        [100.0000,  60.2366],
+        [100.0000,  59.9193],
+        [100.0000,  60.0337],
+        [100.0000,  59.5631],
+        [100.0000,  59.6495],
+        [100.0000,  59.8783],
+        [100.0000,  59.8135],
+        [100.0000,  59.5653],
+        [100.0000,  59.3149],
+        [100.0000,  59.3041],
+        [100.0000,  59.6797],
+        [100.0000,  59.8373],
+        [100.0000,  59.7617],
+        [100.0000,  59.7595]])
+tensor([ 15.3768,  31.8487,  42.6802,  50.6308,  65.4750,  66.1574,  78.1389,
+         85.1674,  91.9413,  90.9776,  91.8947,  98.7917,  98.8000,  99.5307,
+         99.7587,  99.8269,  99.8685,  99.9318,  99.9168,  99.9684,  99.9834,
+         99.9584,  99.9883,  99.9883,  99.9950,  99.9950,  99.9900,  99.9950,
+         99.9967, 100.0000,  99.9967, 100.0000, 100.0000,  99.9950, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000])
+Run 01:
+Highest Valid: 100.00
+Highest Eval Point: 160
+   Final Test: 59.76
+160
+tensor([[ 15.3768,  13.1365],
+        [ 31.8487,  22.0855],
+        [ 42.6802,  27.8681],
+        [ 50.6308,  31.0324],
+        [ 65.4750,  39.4785],
+        [ 66.1574,  39.1936],
+        [ 78.1389,  45.5071],
+        [ 85.1674,  49.8996],
+        [ 91.9413,  52.7575],
+        [ 90.9776,  52.3797],
+        [ 91.8947,  52.4682],
+        [ 98.7917,  58.2011],
+        [ 98.8000,  57.8299],
+        [ 99.5307,  58.7321],
+        [ 99.7587,  59.3732],
+        [ 99.8269,  58.9695],
+        [ 99.8685,  58.7343],
+        [ 99.9318,  59.5394],
+        [ 99.9168,  58.8487],
+        [ 99.9684,  59.5243],
+        [ 99.9834,  59.8221],
+        [ 99.9584,  59.8524],
+        [ 99.9883,  59.8351],
+        [ 99.9883,  59.0775],
+        [ 99.9950,  60.4783],
+        [ 99.9950,  59.3818],
+        [ 99.9900,  59.4897],
+        [ 99.9950,  60.0099],
+        [ 99.9967,  59.2286],
+        [100.0000,  59.6322],
+        [ 99.9967,  59.6624],
+        [100.0000,  59.2264],
+        [100.0000,  59.2286],
+        [ 99.9950,  59.1034],
+        [100.0000,  59.9883],
+        [100.0000,  59.4358],
+        [100.0000,  59.7811],
+        [100.0000,  59.4185],
+        [100.0000,  59.6840],
+        [100.0000,  58.8033],
+        [100.0000,  59.3257],
+        [100.0000,  59.7488],
+        [100.0000,  60.4265],
+        [100.0000,  59.8092],
+        [100.0000,  59.8761],
+        [100.0000,  59.7790],
+        [100.0000,  59.5264],
+        [100.0000,  59.6711],
+        [100.0000,  59.7121],
+        [100.0000,  60.4654],
+        [100.0000,  60.6747],
+        [100.0000,  60.3531],
+        [100.0000,  60.8971],
+        [100.0000,  60.3553],
+        [100.0000,  60.7568],
+        [100.0000,  60.0833],
+        [100.0000,  60.2150],
+        [100.0000,  60.5970],
+        [100.0000,  60.3056],
+        [100.0000,  60.9143],
+        [100.0000,  60.5409],
+        [100.0000,  61.4280],
+        [100.0000,  60.8150],
+        [100.0000,  61.1928],
+        [100.0000,  60.5236],
+        [100.0000,  59.8006],
+        [100.0000,  60.5798],
+        [100.0000,  60.7891],
+        [100.0000,  60.7654],
+        [100.0000,  60.3920],
+        [100.0000,  60.7309],
+        [100.0000,  59.6171],
+        [100.0000,  60.6596],
+        [100.0000,  60.7935],
+        [100.0000,  60.5258],
+        [100.0000,  61.0590],
+        [100.0000,  60.9338],
+        [100.0000,  61.0762],
+        [100.0000,  60.6186],
+        [100.0000,  60.4805],
+        [100.0000,  61.1604],
+        [100.0000,  60.8690],
+        [100.0000,  60.7503],
+        [100.0000,  60.4244],
+        [100.0000,  60.6575],
+        [100.0000,  61.4129],
+        [100.0000,  61.2079],
+        [100.0000,  61.7605],
+        [100.0000,  60.6769],
+        [100.0000,  60.9985],
+        [100.0000,  61.1129],
+        [100.0000,  60.0164],
+        [100.0000,  59.7336],
+        [100.0000,  60.8690],
+        [100.0000,  61.1798],
+        [100.0000,  60.4805],
+        [100.0000,  59.9495],
+        [100.0000,  61.6806],
+        [100.0000,  59.2221],
+        [100.0000,  60.1805],
+        [100.0000,  59.8955],
+        [100.0000,  60.9899],
+        [100.0000,  61.3762],
+        [100.0000,  61.1259],
+        [100.0000,  60.6575],
+        [100.0000,  60.4244],
+        [100.0000,  61.0935],
+        [100.0000,  60.3941],
+        [100.0000,  61.4410],
+        [100.0000,  61.2575],
+        [100.0000,  60.9510],
+        [100.0000,  60.6337],
+        [100.0000,  61.2100],
+        [100.0000,  61.0374],
+        [100.0000,  61.1388],
+        [100.0000,  60.8625],
+        [100.0000,  60.7093],
+        [100.0000,  60.4956],
+        [100.0000,  60.1977],
+        [100.0000,  59.5286],
+        [100.0000,  60.2495],
+        [100.0000,  60.9143],
+        [100.0000,  60.5603],
+        [100.0000,  60.4438],
+        [100.0000,  60.5021],
+        [100.0000,  60.3272],
+        [100.0000,  60.6963],
+        [100.0000,  60.5495],
+        [100.0000,  60.2042],
+        [100.0000,  60.5690],
+        [100.0000,  60.5862],
+        [100.0000,  60.7006],
+        [100.0000,  60.6316],
+        [100.0000,  60.5949],
+        [100.0000,  61.1280],
+        [100.0000,  60.6769],
+        [100.0000,  60.8517],
+        [100.0000,  60.1006],
+        [100.0000,  61.0482],
+        [100.0000,  60.7805],
+        [100.0000,  60.2452],
+        [100.0000,  60.5021],
+        [100.0000,  60.7978],
+        [100.0000,  60.8215],
+        [100.0000,  60.1286],
+        [100.0000,  59.8696],
+        [100.0000,  60.2366],
+        [100.0000,  59.9193],
+        [100.0000,  60.0337],
+        [100.0000,  59.5631],
+        [100.0000,  59.6495],
+        [100.0000,  59.8783],
+        [100.0000,  59.8135],
+        [100.0000,  59.5653],
+        [100.0000,  59.3149],
+        [100.0000,  59.3041],
+        [100.0000,  59.6797],
+        [100.0000,  59.8373],
+        [100.0000,  59.7617],
+        [100.0000,  59.7595]])
+tensor([ 15.3768,  31.8487,  42.6802,  50.6308,  65.4750,  66.1574,  78.1389,
+         85.1674,  91.9413,  90.9776,  91.8947,  98.7917,  98.8000,  99.5307,
+         99.7587,  99.8269,  99.8685,  99.9318,  99.9168,  99.9684,  99.9834,
+         99.9584,  99.9883,  99.9883,  99.9950,  99.9950,  99.9900,  99.9950,
+         99.9967, 100.0000,  99.9967, 100.0000, 100.0000,  99.9950, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000])
+Hits@50
+160
+tensor([[ 28.4036,  21.7229],
+        [ 54.7084,  36.7847],
+        [ 67.6520,  44.0329],
+        [ 76.3048,  48.4880],
+        [ 84.6149,  52.9452],
+        [ 91.5568,  57.3075],
+        [ 96.1071,  59.9473],
+        [ 96.0189,  59.5005],
+        [ 98.3989,  60.6661],
+        [ 99.0164,  62.8872],
+        [ 99.4191,  63.0685],
+        [ 99.8735,  64.2168],
+        [ 99.8885,  63.6470],
+        [ 99.9700,  64.4219],
+        [ 99.9784,  64.6053],
+        [ 99.9850,  63.7937],
+        [ 99.9900,  63.7851],
+        [ 99.9967,  64.4197],
+        [ 99.9967,  64.1326],
+        [ 99.9983,  64.4737],
+        [ 99.9983,  64.1823],
+        [ 99.9983,  64.8794],
+        [ 99.9983,  64.0916],
+        [100.0000,  64.4629],
+        [100.0000,  65.0478],
+        [100.0000,  64.3549],
+        [ 99.9983,  65.0845],
+        [ 99.9983,  64.7219],
+        [100.0000,  64.4175],
+        [100.0000,  64.7996],
+        [100.0000,  64.6636],
+        [100.0000,  63.9448],
+        [100.0000,  64.4758],
+        [100.0000,  64.9334],
+        [100.0000,  64.4067],
+        [100.0000,  64.7780],
+        [100.0000,  64.8018],
+        [100.0000,  64.4521],
+        [100.0000,  65.2054],
+        [100.0000,  64.3118],
+        [100.0000,  65.1104],
+        [100.0000,  65.1644],
+        [100.0000,  65.5443],
+        [100.0000,  65.6759],
+        [100.0000,  65.8249],
+        [100.0000,  65.6824],
+        [100.0000,  66.3494],
+        [100.0000,  65.9673],
+        [100.0000,  65.6846],
+        [100.0000,  66.0019],
+        [100.0000,  65.9781],
+        [100.0000,  65.8011],
+        [100.0000,  65.7623],
+        [100.0000,  66.4789],
+        [100.0000,  66.1076],
+        [100.0000,  66.2717],
+        [100.0000,  66.6990],
+        [100.0000,  66.4961],
+        [100.0000,  66.1508],
+        [100.0000,  66.4746],
+        [100.0000,  66.4487],
+        [100.0000,  66.2609],
+        [100.0000,  66.5803],
+        [100.0000,  66.3904],
+        [100.0000,  66.1983],
+        [100.0000,  66.5631],
+        [100.0000,  66.8437],
+        [100.0000,  66.6537],
+        [100.0000,  66.9322],
+        [100.0000,  66.4120],
+        [100.0000,  66.8652],
+        [100.0000,  66.9408],
+        [100.0000,  67.2451],
+        [100.0000,  67.2969],
+        [100.0000,  67.2710],
+        [100.0000,  67.6919],
+        [100.0000,  67.4135],
+        [100.0000,  66.9235],
+        [100.0000,  67.1545],
+        [100.0000,  67.6034],
+        [100.0000,  67.0530],
+        [100.0000,  67.2322],
+        [100.0000,  67.8171],
+        [100.0000,  67.3682],
+        [100.0000,  67.7070],
+        [100.0000,  67.1156],
+        [100.0000,  66.6559],
+        [100.0000,  67.1912],
+        [100.0000,  66.8868],
+        [100.0000,  67.0876],
+        [100.0000,  67.3423],
+        [100.0000,  67.3984],
+        [100.0000,  67.1955],
+        [100.0000,  67.3962],
+        [100.0000,  67.2969],
+        [100.0000,  67.2020],
+        [100.0000,  67.1437],
+        [100.0000,  66.8156],
+        [100.0000,  67.0487],
+        [100.0000,  67.7092],
+        [100.0000,  67.5862],
+        [100.0000,  67.6034],
+        [100.0000,  67.1199],
+        [100.0000,  67.3034],
+        [100.0000,  67.3380],
+        [100.0000,  67.5042],
+        [100.0000,  67.3142],
+        [100.0000,  67.1027],
+        [100.0000,  67.5236],
+        [100.0000,  67.2948],
+        [100.0000,  67.0250],
+        [100.0000,  67.6229],
+        [100.0000,  67.2387],
+        [100.0000,  67.0012],
+        [100.0000,  67.5193],
+        [100.0000,  67.2171],
+        [100.0000,  67.2516],
+        [100.0000,  67.2192],
+        [100.0000,  67.0919],
+        [100.0000,  67.3682],
+        [100.0000,  67.1307],
+        [100.0000,  67.4416],
+        [100.0000,  67.0099],
+        [100.0000,  67.3185],
+        [100.0000,  67.5646],
+        [100.0000,  67.3228],
+        [100.0000,  67.4459],
+        [100.0000,  67.1092],
+        [100.0000,  67.0876],
+        [100.0000,  67.2084],
+        [100.0000,  67.5840],
+        [100.0000,  67.2128],
+        [100.0000,  67.1480],
+        [100.0000,  67.0919],
+        [100.0000,  66.8760],
+        [100.0000,  67.3725],
+        [100.0000,  67.1610],
+        [100.0000,  67.1847],
+        [100.0000,  67.4416],
+        [100.0000,  67.4394],
+        [100.0000,  67.2581],
+        [100.0000,  67.5128],
+        [100.0000,  67.5624],
+        [100.0000,  67.3660],
+        [100.0000,  67.7502],
+        [100.0000,  67.5948],
+        [100.0000,  67.3466],
+        [100.0000,  68.0632],
+        [100.0000,  67.5214],
+        [100.0000,  67.5883],
+        [100.0000,  67.6617],
+        [100.0000,  67.6401],
+        [100.0000,  67.6617],
+        [100.0000,  67.8042],
+        [100.0000,  67.5883],
+        [100.0000,  67.8560],
+        [100.0000,  67.7610],
+        [100.0000,  67.5495],
+        [100.0000,  67.6142],
+        [100.0000,  67.4200]])
+tensor([ 28.4036,  54.7084,  67.6520,  76.3048,  84.6149,  91.5568,  96.1071,
+         96.0189,  98.3989,  99.0164,  99.4191,  99.8735,  99.8885,  99.9700,
+         99.9784,  99.9850,  99.9900,  99.9967,  99.9967,  99.9983,  99.9983,
+         99.9983,  99.9983, 100.0000, 100.0000, 100.0000,  99.9983,  99.9983,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000])
+Run 01:
+Highest Valid: 100.00
+Highest Eval Point: 160
+   Final Test: 67.42
+160
+tensor([[ 28.4036,  21.7229],
+        [ 54.7084,  36.7847],
+        [ 67.6520,  44.0329],
+        [ 76.3048,  48.4880],
+        [ 84.6149,  52.9452],
+        [ 91.5568,  57.3075],
+        [ 96.1071,  59.9473],
+        [ 96.0189,  59.5005],
+        [ 98.3989,  60.6661],
+        [ 99.0164,  62.8872],
+        [ 99.4191,  63.0685],
+        [ 99.8735,  64.2168],
+        [ 99.8885,  63.6470],
+        [ 99.9700,  64.4219],
+        [ 99.9784,  64.6053],
+        [ 99.9850,  63.7937],
+        [ 99.9900,  63.7851],
+        [ 99.9967,  64.4197],
+        [ 99.9967,  64.1326],
+        [ 99.9983,  64.4737],
+        [ 99.9983,  64.1823],
+        [ 99.9983,  64.8794],
+        [ 99.9983,  64.0916],
+        [100.0000,  64.4629],
+        [100.0000,  65.0478],
+        [100.0000,  64.3549],
+        [ 99.9983,  65.0845],
+        [ 99.9983,  64.7219],
+        [100.0000,  64.4175],
+        [100.0000,  64.7996],
+        [100.0000,  64.6636],
+        [100.0000,  63.9448],
+        [100.0000,  64.4758],
+        [100.0000,  64.9334],
+        [100.0000,  64.4067],
+        [100.0000,  64.7780],
+        [100.0000,  64.8018],
+        [100.0000,  64.4521],
+        [100.0000,  65.2054],
+        [100.0000,  64.3118],
+        [100.0000,  65.1104],
+        [100.0000,  65.1644],
+        [100.0000,  65.5443],
+        [100.0000,  65.6759],
+        [100.0000,  65.8249],
+        [100.0000,  65.6824],
+        [100.0000,  66.3494],
+        [100.0000,  65.9673],
+        [100.0000,  65.6846],
+        [100.0000,  66.0019],
+        [100.0000,  65.9781],
+        [100.0000,  65.8011],
+        [100.0000,  65.7623],
+        [100.0000,  66.4789],
+        [100.0000,  66.1076],
+        [100.0000,  66.2717],
+        [100.0000,  66.6990],
+        [100.0000,  66.4961],
+        [100.0000,  66.1508],
+        [100.0000,  66.4746],
+        [100.0000,  66.4487],
+        [100.0000,  66.2609],
+        [100.0000,  66.5803],
+        [100.0000,  66.3904],
+        [100.0000,  66.1983],
+        [100.0000,  66.5631],
+        [100.0000,  66.8437],
+        [100.0000,  66.6537],
+        [100.0000,  66.9322],
+        [100.0000,  66.4120],
+        [100.0000,  66.8652],
+        [100.0000,  66.9408],
+        [100.0000,  67.2451],
+        [100.0000,  67.2969],
+        [100.0000,  67.2710],
+        [100.0000,  67.6919],
+        [100.0000,  67.4135],
+        [100.0000,  66.9235],
+        [100.0000,  67.1545],
+        [100.0000,  67.6034],
+        [100.0000,  67.0530],
+        [100.0000,  67.2322],
+        [100.0000,  67.8171],
+        [100.0000,  67.3682],
+        [100.0000,  67.7070],
+        [100.0000,  67.1156],
+        [100.0000,  66.6559],
+        [100.0000,  67.1912],
+        [100.0000,  66.8868],
+        [100.0000,  67.0876],
+        [100.0000,  67.3423],
+        [100.0000,  67.3984],
+        [100.0000,  67.1955],
+        [100.0000,  67.3962],
+        [100.0000,  67.2969],
+        [100.0000,  67.2020],
+        [100.0000,  67.1437],
+        [100.0000,  66.8156],
+        [100.0000,  67.0487],
+        [100.0000,  67.7092],
+        [100.0000,  67.5862],
+        [100.0000,  67.6034],
+        [100.0000,  67.1199],
+        [100.0000,  67.3034],
+        [100.0000,  67.3380],
+        [100.0000,  67.5042],
+        [100.0000,  67.3142],
+        [100.0000,  67.1027],
+        [100.0000,  67.5236],
+        [100.0000,  67.2948],
+        [100.0000,  67.0250],
+        [100.0000,  67.6229],
+        [100.0000,  67.2387],
+        [100.0000,  67.0012],
+        [100.0000,  67.5193],
+        [100.0000,  67.2171],
+        [100.0000,  67.2516],
+        [100.0000,  67.2192],
+        [100.0000,  67.0919],
+        [100.0000,  67.3682],
+        [100.0000,  67.1307],
+        [100.0000,  67.4416],
+        [100.0000,  67.0099],
+        [100.0000,  67.3185],
+        [100.0000,  67.5646],
+        [100.0000,  67.3228],
+        [100.0000,  67.4459],
+        [100.0000,  67.1092],
+        [100.0000,  67.0876],
+        [100.0000,  67.2084],
+        [100.0000,  67.5840],
+        [100.0000,  67.2128],
+        [100.0000,  67.1480],
+        [100.0000,  67.0919],
+        [100.0000,  66.8760],
+        [100.0000,  67.3725],
+        [100.0000,  67.1610],
+        [100.0000,  67.1847],
+        [100.0000,  67.4416],
+        [100.0000,  67.4394],
+        [100.0000,  67.2581],
+        [100.0000,  67.5128],
+        [100.0000,  67.5624],
+        [100.0000,  67.3660],
+        [100.0000,  67.7502],
+        [100.0000,  67.5948],
+        [100.0000,  67.3466],
+        [100.0000,  68.0632],
+        [100.0000,  67.5214],
+        [100.0000,  67.5883],
+        [100.0000,  67.6617],
+        [100.0000,  67.6401],
+        [100.0000,  67.6617],
+        [100.0000,  67.8042],
+        [100.0000,  67.5883],
+        [100.0000,  67.8560],
+        [100.0000,  67.7610],
+        [100.0000,  67.5495],
+        [100.0000,  67.6142],
+        [100.0000,  67.4200]])
+tensor([ 28.4036,  54.7084,  67.6520,  76.3048,  84.6149,  91.5568,  96.1071,
+         96.0189,  98.3989,  99.0164,  99.4191,  99.8735,  99.8885,  99.9700,
+         99.9784,  99.9850,  99.9900,  99.9967,  99.9967,  99.9983,  99.9983,
+         99.9983,  99.9983, 100.0000, 100.0000, 100.0000,  99.9983,  99.9983,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000])
+Hits@100
+160
+tensor([[ 40.2936,  29.3833],
+        [ 66.7998,  45.6992],
+        [ 79.4904,  53.5906],
+        [ 89.4564,  59.6581],
+        [ 94.1249,  62.4102],
+        [ 97.3404,  64.7003],
+        [ 99.0347,  66.0839],
+        [ 99.3692,  66.6990],
+        [ 99.7953,  67.0617],
+        [ 99.8402,  67.8905],
+        [ 99.9051,  67.5236],
+        [ 99.9700,  68.1474],
+        [ 99.9867,  68.0805],
+        [ 99.9983,  68.4301],
+        [100.0000,  68.5661],
+        [ 99.9983,  68.4668],
+        [100.0000,  68.7647],
+        [ 99.9983,  68.6848],
+        [100.0000,  68.0610],
+        [100.0000,  68.6827],
+        [100.0000,  68.6870],
+        [100.0000,  69.2482],
+        [100.0000,  68.9417],
+        [100.0000,  69.2288],
+        [100.0000,  69.1122],
+        [100.0000,  69.0129],
+        [100.0000,  69.1705],
+        [100.0000,  68.8532],
+        [100.0000,  69.0949],
+        [100.0000,  69.0906],
+        [100.0000,  69.3022],
+        [100.0000,  69.2266],
+        [100.0000,  68.9007],
+        [100.0000,  69.6346],
+        [100.0000,  69.4187],
+        [100.0000,  69.6410],
+        [100.0000,  69.8375],
+        [100.0000,  70.1893],
+        [100.0000,  69.9195],
+        [100.0000,  69.8375],
+        [100.0000,  70.1807],
+        [100.0000,  70.0684],
+        [100.0000,  70.2044],
+        [100.0000,  70.1353],
+        [100.0000,  70.3555],
+        [100.0000,  70.3728],
+        [100.0000,  71.0527],
+        [100.0000,  70.6275],
+        [100.0000,  70.8347],
+        [100.0000,  70.7915],
+        [100.0000,  70.4828],
+        [100.0000,  70.4656],
+        [100.0000,  70.6124],
+        [100.0000,  70.4224],
+        [100.0000,  70.4310],
+        [100.0000,  70.5800],
+        [100.0000,  70.4505],
+        [100.0000,  70.7419],
+        [100.0000,  70.9858],
+        [100.0000,  70.9771],
+        [100.0000,  70.6080],
+        [100.0000,  70.6901],
+        [100.0000,  70.4677],
+        [100.0000,  70.5865],
+        [100.0000,  70.4440],
+        [100.0000,  70.2929],
+        [100.0000,  70.3037],
+        [100.0000,  70.5325],
+        [100.0000,  71.0117],
+        [100.0000,  70.7764],
+        [100.0000,  70.6901],
+        [100.0000,  71.1606],
+        [100.0000,  70.4785],
+        [100.0000,  70.8066],
+        [100.0000,  70.9340],
+        [100.0000,  71.0397],
+        [100.0000,  71.2146],
+        [100.0000,  70.8390],
+        [100.0000,  71.0937],
+        [100.0000,  70.9685],
+        [100.0000,  70.7591],
+        [100.0000,  70.9642],
+        [100.0000,  71.2944],
+        [100.0000,  70.8196],
+        [100.0000,  70.7419],
+        [100.0000,  70.8174],
+        [100.0000,  70.8023],
+        [100.0000,  70.7289],
+        [100.0000,  70.7246],
+        [100.0000,  71.0592],
+        [100.0000,  70.9275],
+        [100.0000,  71.3031],
+        [100.0000,  70.9577],
+        [100.0000,  71.0851],
+        [100.0000,  71.2254],
+        [100.0000,  71.2448],
+        [100.0000,  71.2772],
+        [100.0000,  70.7721],
+        [100.0000,  71.2383],
+        [100.0000,  71.3851],
+        [100.0000,  71.0807],
+        [100.0000,  71.1477],
+        [100.0000,  70.9124],
+        [100.0000,  71.1887],
+        [100.0000,  71.0807],
+        [100.0000,  71.2599],
+        [100.0000,  71.0376],
+        [100.0000,  71.3721],
+        [100.0000,  71.5038],
+        [100.0000,  71.3031],
+        [100.0000,  71.1002],
+        [100.0000,  71.4088],
+        [100.0000,  71.5815],
+        [100.0000,  71.2880],
+        [100.0000,  71.1131],
+        [100.0000,  70.9944],
+        [100.0000,  71.0009],
+        [100.0000,  70.9836],
+        [100.0000,  70.8843],
+        [100.0000,  71.1671],
+        [100.0000,  70.9016],
+        [100.0000,  71.1369],
+        [100.0000,  70.9858],
+        [100.0000,  71.0311],
+        [100.0000,  71.1477],
+        [100.0000,  70.8412],
+        [100.0000,  71.0052],
+        [100.0000,  71.3484],
+        [100.0000,  71.1736],
+        [100.0000,  71.0548],
+        [100.0000,  70.9124],
+        [100.0000,  70.9685],
+        [100.0000,  71.2340],
+        [100.0000,  70.9038],
+        [100.0000,  70.7829],
+        [100.0000,  70.8692],
+        [100.0000,  70.9728],
+        [100.0000,  71.0052],
+        [100.0000,  70.9599],
+        [100.0000,  71.1930],
+        [100.0000,  71.1347],
+        [100.0000,  71.0548],
+        [100.0000,  71.2383],
+        [100.0000,  71.0117],
+        [100.0000,  71.0333],
+        [100.0000,  71.0225],
+        [100.0000,  70.8412],
+        [100.0000,  70.9728],
+        [100.0000,  71.2426],
+        [100.0000,  71.0635],
+        [100.0000,  71.1023],
+        [100.0000,  71.1045],
+        [100.0000,  71.4542],
+        [100.0000,  71.0700],
+        [100.0000,  71.4369],
+        [100.0000,  71.1736],
+        [100.0000,  71.0959],
+        [100.0000,  71.1736],
+        [100.0000,  71.3247],
+        [100.0000,  71.4067]])
+tensor([ 40.2936,  66.7998,  79.4904,  89.4564,  94.1249,  97.3404,  99.0347,
+         99.3692,  99.7953,  99.8402,  99.9051,  99.9700,  99.9867,  99.9983,
+        100.0000,  99.9983, 100.0000,  99.9983, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000])
+Run 01:
+Highest Valid: 100.00
+Highest Eval Point: 160
+   Final Test: 71.41
+160
+tensor([[ 40.2936,  29.3833],
+        [ 66.7998,  45.6992],
+        [ 79.4904,  53.5906],
+        [ 89.4564,  59.6581],
+        [ 94.1249,  62.4102],
+        [ 97.3404,  64.7003],
+        [ 99.0347,  66.0839],
+        [ 99.3692,  66.6990],
+        [ 99.7953,  67.0617],
+        [ 99.8402,  67.8905],
+        [ 99.9051,  67.5236],
+        [ 99.9700,  68.1474],
+        [ 99.9867,  68.0805],
+        [ 99.9983,  68.4301],
+        [100.0000,  68.5661],
+        [ 99.9983,  68.4668],
+        [100.0000,  68.7647],
+        [ 99.9983,  68.6848],
+        [100.0000,  68.0610],
+        [100.0000,  68.6827],
+        [100.0000,  68.6870],
+        [100.0000,  69.2482],
+        [100.0000,  68.9417],
+        [100.0000,  69.2288],
+        [100.0000,  69.1122],
+        [100.0000,  69.0129],
+        [100.0000,  69.1705],
+        [100.0000,  68.8532],
+        [100.0000,  69.0949],
+        [100.0000,  69.0906],
+        [100.0000,  69.3022],
+        [100.0000,  69.2266],
+        [100.0000,  68.9007],
+        [100.0000,  69.6346],
+        [100.0000,  69.4187],
+        [100.0000,  69.6410],
+        [100.0000,  69.8375],
+        [100.0000,  70.1893],
+        [100.0000,  69.9195],
+        [100.0000,  69.8375],
+        [100.0000,  70.1807],
+        [100.0000,  70.0684],
+        [100.0000,  70.2044],
+        [100.0000,  70.1353],
+        [100.0000,  70.3555],
+        [100.0000,  70.3728],
+        [100.0000,  71.0527],
+        [100.0000,  70.6275],
+        [100.0000,  70.8347],
+        [100.0000,  70.7915],
+        [100.0000,  70.4828],
+        [100.0000,  70.4656],
+        [100.0000,  70.6124],
+        [100.0000,  70.4224],
+        [100.0000,  70.4310],
+        [100.0000,  70.5800],
+        [100.0000,  70.4505],
+        [100.0000,  70.7419],
+        [100.0000,  70.9858],
+        [100.0000,  70.9771],
+        [100.0000,  70.6080],
+        [100.0000,  70.6901],
+        [100.0000,  70.4677],
+        [100.0000,  70.5865],
+        [100.0000,  70.4440],
+        [100.0000,  70.2929],
+        [100.0000,  70.3037],
+        [100.0000,  70.5325],
+        [100.0000,  71.0117],
+        [100.0000,  70.7764],
+        [100.0000,  70.6901],
+        [100.0000,  71.1606],
+        [100.0000,  70.4785],
+        [100.0000,  70.8066],
+        [100.0000,  70.9340],
+        [100.0000,  71.0397],
+        [100.0000,  71.2146],
+        [100.0000,  70.8390],
+        [100.0000,  71.0937],
+        [100.0000,  70.9685],
+        [100.0000,  70.7591],
+        [100.0000,  70.9642],
+        [100.0000,  71.2944],
+        [100.0000,  70.8196],
+        [100.0000,  70.7419],
+        [100.0000,  70.8174],
+        [100.0000,  70.8023],
+        [100.0000,  70.7289],
+        [100.0000,  70.7246],
+        [100.0000,  71.0592],
+        [100.0000,  70.9275],
+        [100.0000,  71.3031],
+        [100.0000,  70.9577],
+        [100.0000,  71.0851],
+        [100.0000,  71.2254],
+        [100.0000,  71.2448],
+        [100.0000,  71.2772],
+        [100.0000,  70.7721],
+        [100.0000,  71.2383],
+        [100.0000,  71.3851],
+        [100.0000,  71.0807],
+        [100.0000,  71.1477],
+        [100.0000,  70.9124],
+        [100.0000,  71.1887],
+        [100.0000,  71.0807],
+        [100.0000,  71.2599],
+        [100.0000,  71.0376],
+        [100.0000,  71.3721],
+        [100.0000,  71.5038],
+        [100.0000,  71.3031],
+        [100.0000,  71.1002],
+        [100.0000,  71.4088],
+        [100.0000,  71.5815],
+        [100.0000,  71.2880],
+        [100.0000,  71.1131],
+        [100.0000,  70.9944],
+        [100.0000,  71.0009],
+        [100.0000,  70.9836],
+        [100.0000,  70.8843],
+        [100.0000,  71.1671],
+        [100.0000,  70.9016],
+        [100.0000,  71.1369],
+        [100.0000,  70.9858],
+        [100.0000,  71.0311],
+        [100.0000,  71.1477],
+        [100.0000,  70.8412],
+        [100.0000,  71.0052],
+        [100.0000,  71.3484],
+        [100.0000,  71.1736],
+        [100.0000,  71.0548],
+        [100.0000,  70.9124],
+        [100.0000,  70.9685],
+        [100.0000,  71.2340],
+        [100.0000,  70.9038],
+        [100.0000,  70.7829],
+        [100.0000,  70.8692],
+        [100.0000,  70.9728],
+        [100.0000,  71.0052],
+        [100.0000,  70.9599],
+        [100.0000,  71.1930],
+        [100.0000,  71.1347],
+        [100.0000,  71.0548],
+        [100.0000,  71.2383],
+        [100.0000,  71.0117],
+        [100.0000,  71.0333],
+        [100.0000,  71.0225],
+        [100.0000,  70.8412],
+        [100.0000,  70.9728],
+        [100.0000,  71.2426],
+        [100.0000,  71.0635],
+        [100.0000,  71.1023],
+        [100.0000,  71.1045],
+        [100.0000,  71.4542],
+        [100.0000,  71.0700],
+        [100.0000,  71.4369],
+        [100.0000,  71.1736],
+        [100.0000,  71.0959],
+        [100.0000,  71.1736],
+        [100.0000,  71.3247],
+        [100.0000,  71.4067]])
+tensor([ 40.2936,  66.7998,  79.4904,  89.4564,  94.1249,  97.3404,  99.0347,
+         99.3692,  99.7953,  99.8402,  99.9051,  99.9700,  99.9867,  99.9983,
+        100.0000,  99.9983, 100.0000,  99.9983, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000,
+        100.0000, 100.0000, 100.0000, 100.0000, 100.0000, 100.0000])
+Folder "metrics_and_weights" already exists.
+Hits@20
+All runs:
+Highest Valid: 100.00  nan
+   Final Test: 59.76  nan
+Hits@50
+All runs:
+Highest Valid: 100.00  nan
+   Final Test: 67.42  nan
+Hits@100
+All runs:
+Highest Valid: 100.00  nan
+   Final Test: 71.41  nan
+
+============================= JOB FEEDBACK =============================
+
+Job ID: 1457442
+Cluster: haic
+User/Group: cc7738/aifb
+Account: aifb
+State: COMPLETED (exit code 0)
+Partition: normal
+Nodes: 1
+Cores per node: 2
+Nodelist: haicn1709
+CPU Utilized: 00:49:55
+CPU Efficiency: 49.75% of 01:40:20 core-walltime
+Job Wall-clock time: 00:50:10
+Starttime: Tue Aug  6 13:57:50 2024
+Endtime: Tue Aug  6 14:48:00 2024
+Memory Utilized: 1.46 GB
+Memory Efficiency: 0.30% of 489.84 GB
+Energy Consumed: 2037401 Joule / 565.944722222222 Watthours
+Average node power draw: 676.877408637874 Watt

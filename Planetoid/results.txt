@@ -1,0 +1,108 @@
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 55.56 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 50.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 55.56 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 75.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 68.75 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 33.33 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 84.62 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 57.69 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 98.08 ± nan
+
+All runs:
+Highest Train: 100.00 ± nan
+Highest Valid: 100.00 ± nan
+  Final Train: 100.00 ± nan
+   Final Test: 100.00 ± nan
+
