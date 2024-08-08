@@ -144,94 +144,98 @@ def main():
     device = torch.device(device)
     
     writer = SummaryWriter()
-    M = 10
-    N = 10
+    M = 20
+    N = 50
     for m in range(M, M + 1):
         for n in range(N, N + 1):
-            for graph_type in ['grid', 'square_grid', 'triangle', 'hexagonal', 'kagome']:
-                args.dataset = graph_type
+            for graph_type in ['square_grid', 'hexagonal']: #['grid', 'square_grid', 'triangle', 'hexagonal', 'kagome']:
+                for hetero in [False, True]:
+                    for homo in [True, False]:
+                        if homo == hetero:
+                            continue
+                        args.dataset = graph_type
 
-                graph = GraphGeneration(m, n, emb_dim=32, graph_type=graph_type)
-                dataset, _, _ = graph.generate_graph()
-                split_edge = do_edge_split(dataset, True)
-                data = dataset
-                data.edge_index = split_edge['train']['edge'].t()
-    
-                data = T.ToSparseTensor(remove_edge_index=False)(data)
-                data = data.to(device)
+                        graph = GraphGeneration(m, n, emb_dim=32, graph_type=graph_type, heterophily=hetero, homophily=homo)
+                        dataset, _, _ = graph.generate_graph()
+                        split_edge = do_edge_split(dataset, True)
+                        data = dataset
+                        data.edge_index = split_edge['train']['edge'].t()
             
-                model = HLGNN(data, args).to(device)
-                
-                predictor = LinkPredictor(data.num_features, args.hidden_channels, 1, args.mlp_num_layers, args.dropout).to(device)
-                para_list = list(model.parameters()) + list(predictor.parameters())
-                total_params = sum(p.numel() for param in para_list for p in param)
-                total_params_print = f'Total number of model parameters is {total_params}'
-                print(total_params_print)
-                
-                evaluator = Evaluator(name='ogbl-collab')
-                
-                loggers = {
-                    'Hits@10': Logger(args.runs, args),
-                    'Hits@50': Logger(args.runs, args),
-                    'Hits@100': Logger(args.runs, args),
-                }
-
-                beta_values = []
-                for run in range(args.runs):
-                    model.reset_parameters()
-                    predictor.reset_parameters()
-                    optimizer = torch.optim.Adam(list(predictor.parameters()) + list(model.parameters()), lr=args.lr)
+                        data = T.ToSparseTensor(remove_edge_index=False)(data)
+                        data = data.to(device)
                     
-                    start_time = time.time()
-                    for epoch in range(1, 1 + args.epochs):
-                        loss = train(model, predictor, data, split_edge, optimizer, args.batch_size, writer, epoch)
+                        model = HLGNN(data, args).to(device)
                         
-                        # Save beta values along with their layer indices on the last epoch
-                        if epoch == args.epochs:
-                            beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.temp.detach().cpu())]
-                            beta_values.extend(beta_values_epoch)
+                        predictor = LinkPredictor(data.num_features, args.hidden_channels, 1, args.mlp_num_layers, args.dropout).to(device)
+                        para_list = list(model.parameters()) + list(predictor.parameters())
+                        total_params = sum(p.numel() for param in para_list for p in param)
+                        total_params_print = f'Total number of model parameters is {total_params}'
+                        print(total_params_print)
+                        
+                        evaluator = Evaluator(name='ogbl-collab')
+                        
+                        loggers = {
+                            'Hits@10': Logger(args.runs, args),
+                            'Hits@50': Logger(args.runs, args),
+                            'Hits@100': Logger(args.runs, args),
+                        }
 
-                        if epoch % args.eval_steps == 0:
-                            results = test(model, predictor, data, split_edge, evaluator, args.batch_size, writer, epoch)
-                            for key, result in results.items():
-                                loggers[key].add_result(run, result)
+                        beta_values = []
+                        for run in range(args.runs):
+                            model.reset_parameters()
+                            predictor.reset_parameters()
+                            optimizer = torch.optim.Adam(list(predictor.parameters()) + list(model.parameters()), lr=args.lr)
+                            
+                            start_time = time.time()
+                            for epoch in range(1, 1 + args.epochs):
+                                loss = train(model, predictor, data, split_edge, optimizer, args.batch_size, writer, epoch)
+                                
+                                # Save beta values along with their layer indices on the last epoch
+                                if epoch == args.epochs:
+                                    beta_values_epoch = [(epoch, layer, value.item()) for layer, value in enumerate(model.temp.detach().cpu())]
+                                    beta_values.extend(beta_values_epoch)
 
-                            if epoch % args.log_steps == 0:
-                                spent_time = time.time() - start_time
-                                for key, result in results.items():
-                                    train_hits, valid_hits, test_hits = result
-                                    print(key)
-                                    print(f'Run: {run + 1:02d}, '
-                                        f'Epoch: {epoch:02d}, '
-                                        f'Loss: {loss:.4f}, '
-                                        f'Train: {100 * train_hits:.2f}%, '
-                                        f'Valid: {100 * valid_hits:.2f}%, '
-                                        f'Test: {100 * test_hits:.2f}%')
-                                    writer.add_scalar(f'{key}/Train', train_hits, epoch)
-                                    writer.add_scalar(f'{key}/Valid', valid_hits, epoch)
-                                    writer.add_scalar(f'{key}/Test', test_hits, epoch)
-                                print('---')
-                                print(f'Training Time Per Epoch: {spent_time / args.eval_steps: .4f} s')
-                                print('---')
-                                start_time = time.time()
+                                if epoch % args.eval_steps == 0:
+                                    results = test(model, predictor, data, split_edge, evaluator, args.batch_size, writer, epoch)
+                                    for key, result in results.items():
+                                        loggers[key].add_result(run, result)
 
-                    for key in loggers.keys():
-                        print(key)
-                        loggers[key].print_statistics(run)
-                
-                with open('metrics_and_weights/results.txt', 'a') as f:
-                    f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}, Norm function: {args.norm_func}\n")
+                                    if epoch % args.log_steps == 0:
+                                        spent_time = time.time() - start_time
+                                        for key, result in results.items():
+                                            train_hits, valid_hits, test_hits = result
+                                            print(key)
+                                            print(f'Run: {run + 1:02d}, '
+                                                f'Epoch: {epoch:02d}, '
+                                                f'Loss: {loss:.4f}, '
+                                                f'Train: {100 * train_hits:.2f}%, '
+                                                f'Valid: {100 * valid_hits:.2f}%, '
+                                                f'Test: {100 * test_hits:.2f}%')
+                                            writer.add_scalar(f'{key}/Train', train_hits, epoch)
+                                            writer.add_scalar(f'{key}/Valid', valid_hits, epoch)
+                                            writer.add_scalar(f'{key}/Test', test_hits, epoch)
+                                        print('---')
+                                        print(f'Training Time Per Epoch: {spent_time / args.eval_steps: .4f} s')
+                                        print('---')
+                                        start_time = time.time()
 
-                for key in loggers.keys():
-                    print(key)
-                    loggers[key].print_statistics()
-                
-                # Save beta values to a file
-                with open('metrics_and_weights/beta_values.txt', 'a') as f:
-                    f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}\n")
-                    for epoch, layer, value in beta_values:
-                        f.write(f'{epoch}\t{layer}\t{value}\n')
-                visualization_geom_fig(beta_values, graph_type, m, n)
+                            for key in loggers.keys():
+                                print(key)
+                                loggers[key].print_statistics(run)
+                        
+                        with open('metrics_and_weights/results.txt', 'a') as f:
+                            f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}, Norm function: {args.norm_func}\n")
+
+                        for key in loggers.keys():
+                            print(key)
+                            loggers[key].print_statistics()
+                        
+                        # Save beta values to a file
+                        with open('metrics_and_weights/beta_values.txt', 'a') as f:
+                            f.write(f"Type Heuristic:{args.init}, Dataset: {args.dataset}\n")
+                            for epoch, layer, value in beta_values:
+                                f.write(f'{epoch}\t{layer}\t{value}\n')
+                        visualization_geom_fig(beta_values, graph_type, m, n, homo, hetero)
 
     writer.close()
 if __name__ == "__main__":

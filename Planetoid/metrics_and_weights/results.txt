@@ -689,3 +689,17 @@ Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
 Type Heuristic:RWR, Dataset: triangle, Norm function: gcn_norm
 Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
 Type Heuristic:RWR, Dataset: kagome, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: square_grid, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm
+Type Heuristic:RWR, Dataset: hexagonal, Norm function: gcn_norm

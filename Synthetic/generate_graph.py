@@ -183,6 +183,7 @@ class GraphGeneration():
             raise ValueError(f"Invalid graph type: {self.graph_type}")
         
         # TODO: CHECK
+        data = from_networkx(G)
         if self.heterophily or self.homophily:
             labels = [G.nodes[node]['label'] for node in G.nodes]
             emb_layer = nn.Embedding(2, self.emb_dim)  # 2 classes for checkerboard pattern
@@ -191,7 +192,6 @@ class GraphGeneration():
                 vectors = emb_layer(label_tensor)
             data.x = vectors    
         else:
-            data = from_networkx(G)
             emb_layer = nn.Embedding(data.num_nodes, self.emb_dim)
         
             pos_list = []

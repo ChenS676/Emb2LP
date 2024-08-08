@@ -39,7 +39,7 @@ def visualization(beta_values, data_name):
     # If you still want to display the plot, you can uncomment the following line
     # plt.show()
 
-def visualization_geom_fig(beta_values, graph_type, m, n):
+def visualization_geom_fig(beta_values, graph_type, m, n, homo, hetero):
     # Convert to numpy array for easier manipulation
     beta_values = np.array(beta_values)
 
@@ -62,7 +62,10 @@ def visualization_geom_fig(beta_values, graph_type, m, n):
     plt.title(f'Beta values at layer for {graph_type.upper()} with m={m} and n={n}')
 
     # Save the figure as a PNG file
-    plt.savefig(f'graph_results/beta_values_{graph_type.lower()}_{m}_{n}.png')
+    if homo == True:
+        plt.savefig(f'graph_results/homo_beta_values_{graph_type.lower()}_{m}_{n}.png')
+    elif hetero == True:
+        plt.savefig(f'graph_results/hetero_beta_values_{graph_type.lower()}_{m}_{n}.png')
 
 def matrix_visualization():
     number = 50
